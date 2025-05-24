@@ -1,1 +1,147 @@
 cadastro.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Profissional - Bem Esportivo</title>
+  <style>
+    :root {
+      --laranja: #FFA500;
+      --laranja-hover: #e69500;
+      --preto: #000;
+      --cinza-claro: #f8f8f8;
+      --branco: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--cinza-claro);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--preto);
+      color: var(--laranja);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: var(--laranja);
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--laranja-hover);
+    }
+
+    main {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--branco);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: var(--laranja);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: var(--laranja);
+      color: var(--branco);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: var(--laranja-hover);
+    }
+
+    footer {
+      background-color: var(--preto);
+      color: var(--branco);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Bem Esportivo</h1>
+    <p>Saúde, Esporte e Lazer</p>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="busca.html">Buscar Profissionais</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Cadastro de Profissionais</h2>
+    <form enctype="multipart/form-data" method="post" action="#">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+      <label for="especialidade">Especialidade:</label>
+      <input type="text" id="especialidade" name="especialidade" placeholder="Ex: Personal Trainer" required>
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="4" placeholder="Fale um pouco sobre seu trabalho" required></textarea>
+
+      <label for="foto">Foto do Profissional:</label>
+      <input type="file" id="foto" name="foto" accept="image/*" required>
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 Bem Esportivo - Todos os direitos reservados
+  </footer>
+
+</body>
+
+</html>
