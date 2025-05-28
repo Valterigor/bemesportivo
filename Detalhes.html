@@ -1,0 +1,84 @@
+Detalhes.html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado - Bem Esportivo</title>
+  <style>
+    :root {
+      --laranja: #FFA500;
+      --laranja-hover: #e69500;
+      --preto: #000;
+      --cinza-claro: #f8f8f8;
+      --branco: #fff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--cinza-claro);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--preto);
+      color: var(--laranja);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    .logo {
+      width: 200px;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--branco);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .btn {
+      background-color: var(--laranja);
+      color: var(--preto);
+      padding: 0.75rem 1.5rem;
+      margin-top: 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+    .btn:hover { background-color: var(--laranja-hover); }
+    footer {
+      background-color: var(--preto);
+      color: var(--branco);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logosemfundo.jpg" alt="Logo da Bem Esportivo" class="logo">
+  <h1>Obrigado pelo Cadastro!</h1>
+</header>
+
+<main>
+  <h2>Cadastro enviado com sucesso!</h2>
+  <p>Em breve nossa equipe entrará em contato com você.  
+  Agradecemos por fazer parte da rede Bem Esportivo!</p>
+
+  <a href="index.html" class="btn">Voltar para o Início</a>
+</main>
+
+<footer>
+  &copy; 2025 Bem Esportivo - Todos os direitos reservados
+</footer>
+
+</body>
+</html>
