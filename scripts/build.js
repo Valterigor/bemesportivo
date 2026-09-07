@@ -52,6 +52,24 @@ for (const fileName of [
   fs.copyFileSync(sourcePath, path.join(distDir, fileName));
 }
 
+// Canonical report URLs are real directory indexes. This avoids Cloudflare
+// Pages clean-URL redirects cycling through the legacy root HTML filenames.
+const reportRoutes = {
+  'treino-funcional-br-assessoria': 'reportagem-treino-funcional.html',
+  'elas-em-movimento-serra-talhada': 'reportagem-elas-em-movimento-serra-talhada.html',
+  'dedicacao-talento-mirim': 'reportagem-dedicacao-talento-mirim.html',
+  'duda-e-o-futebol': 'reportagem-duda-e-o-futebol.html',
+  'elas-trazem-esperanca': 'reportagem-elas-trazem-esperanca.html',
+  'mayara-magnolia-papo-bem-esportivo': 'reportagem-mayara-magnolia-papo-bem-esportivo.html',
+  'sergio-lima-exemplo-de-vida': 'reportagem-sergio-lima-exemplo-de-vida.html',
+  'thais-garcez-metamorfose': 'reportagem-thais-garcez-metamorfose.html'
+};
+for (const [slug, sourceFile] of Object.entries(reportRoutes)) {
+  const routeDirectory = path.join(distDir, 'reportagens', slug);
+  fs.mkdirSync(routeDirectory, { recursive: true });
+  fs.copyFileSync(path.join(rootDir, sourceFile), path.join(routeDirectory, 'index.html'));
+}
+
 fs.writeFileSync(path.join(distDir, 'build-manifest.json'), `${JSON.stringify({
   generatedAt: new Date().toISOString(),
   deployment: 'cloudflare-pages',
