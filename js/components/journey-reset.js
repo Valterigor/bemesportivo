@@ -15,7 +15,7 @@ function openResetDialog() {
   const confirmButton = document.getElementById('fb-reset-confirm');
   if (confirmButton) {
     confirmButton.disabled = false;
-    confirmButton.textContent = 'Sim, zerar e recomeçar';
+    confirmButton.textContent = 'Excluir e zerar neste aparelho';
   }
   if (!dialog.open) {
     try { dialog.showModal(); } catch { dialog.setAttribute('open', ''); }

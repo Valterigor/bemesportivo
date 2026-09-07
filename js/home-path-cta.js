@@ -10,21 +10,17 @@
   let profile = null;
   try { profile = JSON.parse(localStorage.getItem(PROFILE_KEY) || 'null'); } catch {}
   const hasIdentity = String(profile?.name || '').trim().length >= 2 && Boolean(profile?.identityCreatedAt || profile?.objective);
-  const hasJourney = Boolean(profile?.objective);
 
 
-  if (hasIdentity && hasJourney) {
+  if (hasIdentity) {
     label.textContent = 'Registrar minha atividade';
     cta.dataset.pathState = 'ready';
-  } else if (hasIdentity) {
-    label.textContent = 'Continuar meu Caminho Be';
-    cta.dataset.pathState = 'map';
   } else {
     cta.dataset.pathState = 'profile';
   }
 
   cta.addEventListener('click', () => {
-    if (hasJourney) return;
+    if (hasIdentity) return;
     try { sessionStorage.setItem(PENDING_KEY, 'registrar'); } catch {}
   });
 })();

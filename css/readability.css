@@ -1,7 +1,7 @@
 /* Camada final de legibilidade: contraste consistente sem alterar a hierarquia visual. */
 :root {
-  --be-readable-orange: #a83b08;
-  --be-readable-orange-hover: #8f3005;
+  --be-readable-orange: #8e4f07;
+  --be-readable-orange-hover: #784306;
   --be-readable-muted: #5f5853;
 }
 
@@ -35,9 +35,9 @@
   color: var(--be-readable-muted) !important;
 }
 
-.home-page .be-search-result-card.is-conteudo .be-search-result-body > small { color: #a23b05 !important; }
+.home-page .be-search-result-card.is-conteudo .be-search-result-body > small { color: #8b4d07 !important; }
 .home-page .be-search-result-card.is-ferramentas .be-search-result-body > small { color: #06698e !important; }
-.home-page .be-search-result-card.is-meu-caminho .be-search-result-body > small { color: #805000 !important; }
+.home-page .be-search-result-card.is-meu-caminho .be-search-result-body > small { color: #884c07 !important; }
 
 .beplay-page :where(.section-title span, .summary-item span, #playlistCount, #profileTitle) {
   color: var(--be-readable-orange) !important;
@@ -60,8 +60,8 @@ body:has(#productsGrid) .sub { color: #514a45 !important; }
 body:has(#productsGrid) .tag { color: var(--be-readable-orange) !important; }
 
 .professionals-page {
-  --pro-orange: #b43d0a;
-  --pro-orange-dark: #9c3509;
+  --pro-orange: #975508;
+  --pro-orange-dark: #834907;
   --pro-muted: #5f5751;
 }
 
@@ -69,9 +69,9 @@ body:has(#productsGrid) .tag { color: var(--be-readable-orange) !important; }
   .professional-cta-grid article > span, .category) { color: var(--pro-orange-dark) !important; }
 
 .fala-bem-app-page {
-  --be-app-orange: #b43d0a;
+  --be-app-orange: #975508;
   --be-app-muted: #5e5752;
-  --mcb-orange-dark: #a43809;
+  --mcb-orange-dark: #8a4d07;
 }
 
 .fala-bem-app-page :where(.fb-app-brand small, .be-profile-presentation-identity > p,
@@ -103,7 +103,7 @@ body.reportagens-page .be-community-reply-form button[type="submit"] {
 }
 
 body.home-page .be-search-result-card.is-conteudo .be-search-result-body > small,
-body.home-page .be-search-result-card.is-reportagens .be-search-result-body > small { color: #8f3208 !important; }
+body.home-page .be-search-result-card.is-reportagens .be-search-result-body > small { color: #794306 !important; }
 body.home-page .be-search-how li > span,
 body.home-page .home-journey-copy h2 em,
 body.home-page .home-panel-head > span { color: var(--be-readable-orange) !important; }
@@ -123,7 +123,7 @@ body.reportagens-page .report-interview-video > div:first-child > span,
 body.reportagens-page .report-archive-channels > span,
 body.reportagens-page .report-card-thais .report-photo-story-card > div span { color: var(--be-readable-orange) !important; }
 body.reportagens-page .report-article-section a,
-body.reportagens-page .report-body a { color: #983704 !important; }
+body.reportagens-page .report-body a { color: #824807 !important; }
 body.reportagens-page .report-comments.be-community .be-community-heading span { color: var(--be-readable-orange) !important; }
 body.reportagens-page .report-comments.be-community .be-community-empty > span { color: var(--be-readable-orange) !important; }
 body.reportagens-page a.report-share-button.report-share-whatsapp { background: #0d7135 !important; color: #fff !important; }

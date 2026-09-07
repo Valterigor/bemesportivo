@@ -1,18 +1,18 @@
 :root {
-  --maker-orange: #bd410e;
-  --maker-orange-dark: #a83b08;
+  --maker-orange: #a05908;
+  --maker-orange-dark: #8e4f07;
   --maker-ink: #1b1714;
   --maker-muted: #6f655e;
   --maker-line: #e8ddd5;
   --maker-paper: #fff;
   --maker-soft: #f8f3ef;
-  --maker-shadow: 0 24px 70px rgba(48, 31, 21, .1);
+  --maker-shadow: 0 24px 70px rgba(53, 29, 3, .1);
 }
 * { box-sizing: border-box; }
 body.be-maker-page {
   min-height: 100vh;
   margin: 0;
-  background: radial-gradient(circle at 0 19rem, rgba(240, 90, 24, .09), transparent 28rem), linear-gradient(180deg, #fbfaf8, #f5f0eb 52rem, #fbfaf9);
+  background: radial-gradient(circle at 0 19rem, rgba(208, 116, 11, .09), transparent 28rem), linear-gradient(180deg, #fbfaf8, #f5f0eb 52rem, #fbfaf9);
   color: var(--maker-ink);
   font-family: Rubik, Inter, Arial, sans-serif;
 }
@@ -29,8 +29,8 @@ body.be-maker-page {
   margin-bottom: 28px;
   padding: clamp(34px, 5vw, 62px);
   border-radius: 32px;
-  background: radial-gradient(circle at 94% -5%, rgba(255, 135, 77, .35), transparent 19rem), linear-gradient(130deg, #191411 5%, #3a2119 60%, #762b0e);
-  box-shadow: 0 26px 80px rgba(48, 26, 16, .18);
+  background: radial-gradient(circle at 94% -5%, rgba(243, 144, 31, .35), transparent 19rem), linear-gradient(130deg, #191411 5%, #3c2103 60%, #653805);
+  box-shadow: 0 26px 80px rgba(48, 27, 3, .18);
   color: #fff;
 }
 .be-maker-intro::before, .be-maker-intro::after { position: absolute; border: 1px solid rgba(255, 255, 255, .1); border-radius: 50%; content: ""; pointer-events: none; }
@@ -38,17 +38,17 @@ body.be-maker-page {
 .be-maker-intro::after { width: 250px; height: 250px; top: -175px; right: 5%; }
 .be-maker-intro-copy, .be-maker-intro ol { position: relative; z-index: 1; }
 .be-maker-intro-copy > span, .be-maker-form-card > header > span, .be-maker-preview-column > header > div > span { color: var(--maker-orange-dark); font-size: 10px; font-weight: 900; letter-spacing: .16em; }
-.be-maker-intro-copy > span { color: #ff9b66; }
+.be-maker-intro-copy > span { color: #f5a243; }
 .be-maker-intro h1 { max-width: 710px; margin: 11px 0 15px; font: 900 clamp(38px, 5vw, 62px)/.97 Manrope, Inter, sans-serif; letter-spacing: -.055em; text-wrap: balance; }
-.be-maker-intro h1 em { color: #ff7130; font-style: normal; }
+.be-maker-intro h1 em { color: #e9820c; font-style: normal; }
 .be-maker-intro p { max-width: 650px; margin: 0; color: rgba(255, 255, 255, .72); font-size: 15px; line-height: 1.65; }
 .be-maker-intro ul { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 22px 0 0; padding: 0; list-style: none; }
 .be-maker-intro ul li { display: flex; align-items: center; gap: 7px; color: rgba(255, 255, 255, .78); font-size: 10px; font-weight: 700; }
-.be-maker-intro ul li::before { width: 5px; height: 5px; border-radius: 50%; background: #ff7130; box-shadow: 0 0 0 4px rgba(255, 113, 48, .13); content: ""; }
+.be-maker-intro ul li::before { width: 5px; height: 5px; border-radius: 50%; background: #e9820c; box-shadow: 0 0 0 4px rgba(233, 130, 12, .13); content: ""; }
 .be-maker-intro ol { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
 .be-maker-intro ol li { display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; min-height: 62px; padding: 10px 14px; border: 1px solid rgba(255, 255, 255, .12); border-radius: 15px; background: rgba(255, 255, 255, .07); backdrop-filter: blur(8px); }
-.be-maker-intro ol li:first-child { border-color: rgba(255, 126, 66, .42); background: rgba(240, 90, 24, .13); }
-.be-maker-intro ol li > b { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; background: rgba(255, 255, 255, .1); color: #ff9b66; font-size: 12px; }
+.be-maker-intro ol li:first-child { border-color: rgba(242, 136, 14, .42); background: rgba(208, 116, 11, .13); }
+.be-maker-intro ol li > b { display: grid; width: 38px; height: 38px; place-items: center; border-radius: 12px; background: rgba(255, 255, 255, .1); color: #f5a243; font-size: 12px; }
 .be-maker-intro ol li:first-child > b { background: var(--maker-orange); color: #fff; }
 .be-maker-intro ol li span { display: grid; gap: 3px; }
 .be-maker-intro ol li strong { color: #fff; font-size: 12px; }
@@ -69,7 +69,7 @@ body.be-maker-page {
 .be-maker-form-card :is(input, select) { min-height: 50px; padding: 0 13px; }
 .be-maker-form-card textarea { min-height: 132px; padding: 14px; line-height: 1.58; resize: vertical; }
 .be-maker-form-card :is(input, select, textarea):hover { border-color: #cbbdb4; }
-.be-maker-form-card :is(input, select, textarea):focus { border-color: var(--maker-orange); box-shadow: 0 0 0 4px rgba(240, 90, 24, .1); }
+.be-maker-form-card :is(input, select, textarea):focus { border-color: var(--maker-orange); box-shadow: 0 0 0 4px rgba(208, 116, 11, .1); }
 .be-maker-form-card :is(input, textarea)::placeholder { color: #978b83; }
 .be-maker-story { position: relative; }
 .be-maker-story > small { position: absolute; right: 11px; bottom: 10px; padding: 3px 6px; border-radius: 6px; background: rgba(255, 255, 255, .92); color: #756b64; font-size: 9px; font-weight: 650; }
@@ -86,7 +86,7 @@ body.be-maker-page {
 .be-maker-photo-actions label:hover { border-color: var(--maker-orange); color: var(--maker-orange-dark); }
 .be-maker-photo button { color: #993b2e; }
 .be-maker-photo input[type=file] { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
-.be-maker-photo figure { grid-column: 1 / -1; margin: 0; overflow: hidden; border-radius: 13px; background-color: #5b2c1b; background-position: center; background-size: cover; }
+.be-maker-photo figure { grid-column: 1 / -1; margin: 0; overflow: hidden; border-radius: 13px; background-color: #563005; background-position: center; background-size: cover; }
 .be-maker-photo figure[hidden] { display: none; }
 .be-maker-photo img { display: block; width: 100%; max-height: 360px; object-fit: contain; }
 .be-maker-photo > p { grid-column: 1 / -1; min-height: 0; margin: -5px 0 0; color: #93412f; font-size: 10px; }
@@ -104,34 +104,34 @@ body.be-maker-page {
 .be-maker-privacy { display: flex; align-items: center; gap: 11px; margin: 0; padding: 14px; border: 1px solid #e3ece1; border-radius: 14px; background: #f4f8f3; color: #526353; font-size: 10px; line-height: 1.45; }
 .be-maker-privacy svg { flex: 0 0 20px; width: 20px; height: 20px; fill: none; stroke: #3f6545; stroke-width: 1.8; }
 .be-maker-privacy strong { display: block; color: #2d4e34; font-size: 11px; }
-.be-maker-generate { display: flex; min-height: 58px; align-items: center; justify-content: space-between; padding: 0 21px; border: 0; border-radius: 14px; background-color: #b83d0c; background-image: linear-gradient(110deg, #a83b08, #bd410e); box-shadow: 0 15px 30px rgba(168, 59, 8, .25); color: #fff; font: 850 13px Inter, sans-serif; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
-body.be-maker-page .be-maker-generate { border-color: #a83b08 !important; background-color: #b83d0c !important; background-image: linear-gradient(110deg, #a83b08, #bd410e) !important; box-shadow: 0 15px 30px rgba(168, 59, 8, .25) !important; font-weight: 850 !important; }
-.be-maker-generate:hover, .be-maker-generate:focus-visible { box-shadow: 0 18px 35px rgba(191, 65, 13, .3); transform: translateY(-1px); }
+.be-maker-generate { display: flex; min-height: 58px; align-items: center; justify-content: space-between; padding: 0 21px; border: 0; border-radius: 14px; background-color: #9a5608; background-image: linear-gradient(110deg, #8e4f07, #a05908); box-shadow: 0 15px 30px rgba(142, 79, 7, .25); color: #fff; font: 850 13px Inter, sans-serif; cursor: pointer; transition: transform .18s ease, box-shadow .18s ease; }
+body.be-maker-page .be-maker-generate { border-color: #8e4f07 !important; background-color: #9a5608 !important; background-image: linear-gradient(110deg, #8e4f07, #a05908) !important; box-shadow: 0 15px 30px rgba(142, 79, 7, .25) !important; font-weight: 850 !important; }
+.be-maker-generate:hover, .be-maker-generate:focus-visible { box-shadow: 0 18px 35px rgba(161, 90, 8, .3); transform: translateY(-1px); }
 .be-maker-generate b { font-size: 21px; }
 .be-maker-feedback { min-height: 17px; margin: -7px 0 0; color: #8c3927; font-size: 11px; }
-.be-maker-preview-column { position: sticky; top: 88px; padding: 22px; border: 1px solid rgba(226, 215, 207, .9); border-radius: 28px; background: rgba(255, 255, 255, .62); box-shadow: 0 18px 60px rgba(48, 31, 21, .07); backdrop-filter: blur(12px); }
+.be-maker-preview-column { position: sticky; top: 88px; padding: 22px; border: 1px solid rgba(226, 215, 207, .9); border-radius: 28px; background: rgba(255, 255, 255, .62); box-shadow: 0 18px 60px rgba(53, 29, 3, .07); backdrop-filter: blur(12px); }
 .be-maker-preview-column > header { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin: 0 2px 15px; }
 .be-maker-preview-column > header > div { min-width: 0; }
 .be-maker-preview-column h2 { margin-bottom: 0; font-size: 25px; }
 .be-maker-preview-column > header > small { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 6px; padding: 7px 9px; border-radius: 999px; background: #f1ebe6; color: #6c6159; font-size: 8px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .be-maker-preview-column > header > small i { width: 6px; height: 6px; border-radius: 50%; background: #36a15a; box-shadow: 0 0 0 3px rgba(54, 161, 90, .12); }
-.be-maker-preview { position: relative; display: grid; min-height: 0; aspect-ratio: 4 / 5; align-content: start; overflow: hidden; padding: clamp(25px, 3vw, 32px); border: 1px solid rgba(255, 255, 255, .12); border-radius: 24px; background: radial-gradient(circle at 86% 8%, rgba(255, 255, 255, .13), transparent 13rem), linear-gradient(145deg, #171310 0%, #49261c 58%, #ba420f 100%); box-shadow: 0 24px 60px rgba(45, 27, 19, .23); color: #fff; }
+.be-maker-preview { position: relative; display: grid; min-height: 0; aspect-ratio: 4 / 5; align-content: start; overflow: hidden; padding: clamp(25px, 3vw, 32px); border: 1px solid rgba(255, 255, 255, .12); border-radius: 24px; background: radial-gradient(circle at 86% 8%, rgba(255, 255, 255, .13), transparent 13rem), linear-gradient(145deg, #171310 0%, #482804 58%, #9e5808 100%); box-shadow: 0 24px 60px rgba(48, 27, 3, .23); color: #fff; }
 .be-maker-preview::before, .be-maker-preview::after { position: absolute; border: 1px solid rgba(255, 255, 255, .12); border-radius: 50%; content: ""; }
 .be-maker-preview::before { width: 270px; height: 270px; top: -180px; right: -40px; }
 .be-maker-preview::after { width: 170px; height: 170px; top: -104px; right: 10px; }
 .be-maker-preview-brand { position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; }
-.be-maker-preview-brand > strong { color: #ff7d3d; font: 900 42px/.8 Manrope, Inter, sans-serif; letter-spacing: -.08em; }
+.be-maker-preview-brand > strong { color: #f2870d; font: 900 42px/.8 Manrope, Inter, sans-serif; letter-spacing: -.08em; }
 .be-maker-preview-brand > span { color: rgba(255, 255, 255, .72); font-size: 8px; font-weight: 850; letter-spacing: .11em; line-height: 1.35; }
-.be-maker-preview > figure { position: relative; z-index: 1; margin: 22px 0 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .18); border-radius: 17px; background-color: #5b2c1b; background-position: center; background-size: cover; }
+.be-maker-preview > figure { position: relative; z-index: 1; margin: 22px 0 0; overflow: hidden; border: 1px solid rgba(255, 255, 255, .18); border-radius: 17px; background-color: #563005; background-position: center; background-size: cover; }
 .be-maker-preview > figure[hidden] { display: none; }
 .be-maker-preview > figure img { display: block; width: 100%; max-height: 270px; object-fit: contain; }
 .be-maker-preview-profile { position: relative; z-index: 1; display: flex; align-items: center; gap: 11px; margin-top: 25px; }
-.be-maker-preview-profile > span { display: grid; flex: 0 0 46px; width: 46px; height: 46px; place-items: center; border: 3px solid rgba(255, 255, 255, .9); border-radius: 50%; background: linear-gradient(145deg, #ff8b4d, #d5480f); box-shadow: 0 8px 20px rgba(0, 0, 0, .18); font-size: 17px; font-weight: 900; }
+.be-maker-preview-profile > span { display: grid; flex: 0 0 46px; width: 46px; height: 46px; place-items: center; border: 3px solid rgba(255, 255, 255, .9); border-radius: 50%; background: linear-gradient(145deg, #f49325, #b46409); box-shadow: 0 8px 20px rgba(0, 0, 0, .18); font-size: 17px; font-weight: 900; }
 .be-maker-preview-profile > div { display: grid; gap: 2px; }
 .be-maker-preview-profile strong { font-size: 13px; }
 .be-maker-preview-profile small { color: rgba(255, 255, 255, .66); font-size: 9px; }
 .be-maker-preview-copy { position: relative; z-index: 1; margin-top: 25px; }
-.be-maker-preview-copy > span { color: #ffab7c; font-size: 9px; font-weight: 900; letter-spacing: .13em; }
+.be-maker-preview-copy > span { color: #f7b160; font-size: 9px; font-weight: 900; letter-spacing: .13em; }
 .be-maker-preview-copy h3 { margin: 8px 0 10px; font: 850 clamp(28px, 3.5vw, 38px)/1.03 Manrope, Inter, sans-serif; letter-spacing: -.04em; overflow-wrap: anywhere; }
 .be-maker-preview-copy p { display: -webkit-box; margin: 0; overflow: hidden; color: rgba(255, 255, 255, .82); font-size: 12px; line-height: 1.6; white-space: pre-line; overflow-wrap: anywhere; -webkit-box-orient: vertical; -webkit-line-clamp: 7; }
 .be-maker-preview:has(> figure:not([hidden])) .be-maker-preview-copy h3 { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
@@ -139,9 +139,9 @@ body.be-maker-page .be-maker-generate { border-color: #a83b08 !important; backgr
 .be-maker-preview-metrics { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
 .be-maker-preview-metrics[hidden] { display: none; }
 .be-maker-preview-metrics span { padding: 7px 9px; border: 1px solid rgba(255, 255, 255, .09); border-radius: 9px; background: rgba(255, 255, 255, .12); color: #fff; font-size: 9px; font-weight: 750; }
-.be-maker-preview-record { position: relative; z-index: 1; justify-self: start; margin-top: 14px; padding: 8px 10px; border-left: 3px solid #ff9a58; background: rgba(255, 255, 255, .1); color: #ffd1b4; font-size: 9px; letter-spacing: .06em; }
+.be-maker-preview-record { position: relative; z-index: 1; justify-self: start; margin-top: 14px; padding: 8px 10px; border-left: 3px solid #f5a040; background: rgba(255, 255, 255, .1); color: #ffd1b4; font-size: 9px; letter-spacing: .06em; }
 .be-maker-preview > footer { position: relative; z-index: 1; display: grid; gap: 3px; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, .14); }
-.be-maker-preview > footer span { color: #ff9e6a; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
+.be-maker-preview > footer span { color: #f5a548; font-size: 8px; font-weight: 900; letter-spacing: .13em; }
 .be-maker-preview > footer strong { color: rgba(255, 255, 255, .78); font-size: 10px; }
 .be-maker-preview-note { margin: 14px 5px 1px; color: var(--maker-muted); font-size: 9px; line-height: 1.55; }
 .be-maker-preview-note strong { color: #433a34; }
@@ -160,7 +160,7 @@ body.be-maker-page .be-maker-generate { border-color: #a83b08 !important; backgr
   .be-maker-page .menu-content { justify-content: space-between !important; overflow: visible !important; }
   .be-maker-page .menu nav { display: none !important; }
   .be-maker-page .menu-actions { display: flex !important; margin-left: auto; }
-  .be-maker-page .menu-actions .btn-contato { display: inline-flex !important; min-height: 38px; padding: 0 12px !important; border: 1px solid #eaded6 !important; border-radius: 10px !important; background: #fff8f3 !important; box-shadow: none !important; color: #8f390f !important; font-size: 10px !important; }
+  .be-maker-page .menu-actions .btn-contato { display: inline-flex !important; min-height: 38px; padding: 0 12px !important; border: 1px solid #eaded6 !important; border-radius: 10px !important; background: #fff8f3 !important; box-shadow: none !important; color: #7e4607 !important; font-size: 10px !important; }
   .be-maker-intro { gap: 26px; padding: 28px 22px 22px; border-radius: 24px; }
   .be-maker-intro h1 { font-size: clamp(38px, 11.5vw, 48px); }
   .be-maker-intro p { font-size: 13px; }

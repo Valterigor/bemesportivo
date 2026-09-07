@@ -637,6 +637,9 @@ function registerFirstIdentityAccess() {
 }
 
 function showDailyWelcome(name) {
+  // A direct destination or an active task must not be interrupted by a greeting.
+  if (!['/meu-caminho-be', '/meu-caminho-be/', '/meu-caminho-be.html'].includes(location.pathname)
+    || location.search || document.querySelector('dialog[open]')) return;
   const dialog = document.getElementById('fb-daily-welcome');
   const nameTarget = document.getElementById('fb-welcome-name');
   if (!dialog || !nameTarget || dialog.open) return;
@@ -710,7 +713,7 @@ async function resetLocalJourney() {
     await window.BePublicProfile?.deleteProfile?.();
   } catch (error) {
     showProductFeedback({ type: 'warning', title: 'Não foi possível retirar sua página pública.', message: 'Conecte-se à internet e tente novamente antes de apagar os dados deste aparelho.' });
-    if (resetButton) { resetButton.disabled = false; resetButton.textContent = 'Sim, zerar e recomeçar'; }
+    if (resetButton) { resetButton.disabled = false; resetButton.textContent = 'Excluir e zerar neste aparelho'; }
     return;
   }
   try {
@@ -729,7 +732,7 @@ async function resetLocalJourney() {
     if (remainingJourneyKeys.length) throw new Error('reset-incomplete');
   } catch (error) {
     showProductFeedback({ type: 'warning', title: 'Não foi possível apagar todos os dados.', message: 'Verifique as permissões de armazenamento do navegador e tente novamente.' });
-    if (resetButton) { resetButton.disabled = false; resetButton.textContent = 'Sim, zerar e recomeçar'; }
+    if (resetButton) { resetButton.disabled = false; resetButton.textContent = 'Excluir e zerar neste aparelho'; }
     return;
   }
   currentProfile = null;
@@ -4036,6 +4039,14 @@ document.getElementById('fb-profile-form')?.addEventListener('submit', event => 
   });
   showCelebration(interaction.title, interaction.message, { detail: interaction.detail });
   if (wasIdentityPending && hasProfileIdentity()) {
+    let requestedRegistration = false;
+    try { requestedRegistration = sessionStorage.getItem(PENDING_REGISTRATION_KEY) === 'registrar'; } catch {}
+    if (requestedRegistration) {
+      try { sessionStorage.removeItem(PENDING_REGISTRATION_KEY); } catch {}
+      openView('registrar');
+      document.querySelector('[data-fb-panel="registrar"] [data-be-new-entry]')?.focus();
+      return;
+    }
     window.dispatchEvent(new CustomEvent('meuCaminhoBe:edit-onboarding', { detail: { ...(currentProfile || {}) } }));
     openView('jornada');
     const feedback = document.getElementById('fb-profile-feedback');

@@ -1,6 +1,6 @@
-@import url("./core/tokens.css?v=20260814-1");
-@import url("./core/primitives.css?v=20260723-1");
-@import url("./components/ui.css?v=20260723-1");
-@import url("./components/privacy-consent.css?v=20260723-1");
+@import url("./core/tokens.css?v=20260906-1");
+@import url("./core/primitives.css?v=20260906-1");
+@import url("./components/ui.css?v=20260906-1");
+@import url("./components/privacy-consent.css?v=20260906-1");
 
 /* Stable public entry point for the Bem Esportivo design system. */

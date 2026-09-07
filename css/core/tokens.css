@@ -1,11 +1,11 @@
 :root {
   /* Brand */
-  --be-ds-color-brand: #ff7a00;
-  --be-ds-color-brand-strong: #d45f00;
-  --be-ds-color-brand-text: #b84b00;
+  --be-ds-color-brand: #ef850d;
+  --be-ds-color-brand-strong: #c26c0a;
+  --be-ds-color-brand-text: #a35b09;
   --be-ds-color-primary: var(--be-ds-color-brand);
-  --be-ds-color-primary-hover: #e96800;
-  --be-ds-color-primary-active: #d45f00;
+  --be-ds-color-primary-hover: #d5770b;
+  --be-ds-color-primary-active: #c26c0a;
   --be-ds-color-secondary: #28231f;
   --be-ds-color-ink: #171717;
   --be-ds-color-text: #3f3b37;
@@ -21,7 +21,7 @@
   --be-ds-color-disabled-surface: #f1f0ef;
   --be-ds-color-success: #168653;
   --be-ds-color-success-surface: #edf9f2;
-  --be-ds-color-warning: #9b6100;
+  --be-ds-color-warning: #a45c09;
   --be-ds-color-warning-surface: #fff8e7;
   --be-ds-color-danger: #b42318;
   --be-ds-color-danger-surface: #fff1ef;
@@ -30,10 +30,10 @@
   --be-ds-color-focus: #1f6feb;
 
   /* Data visualization */
-  --be-ds-chart-1: #ff6a00;
+  --be-ds-chart-1: #e37f0c;
   --be-ds-chart-2: #168653;
   --be-ds-chart-3: #245ea8;
-  --be-ds-chart-4: #9b6100;
+  --be-ds-chart-4: #a45c09;
   --be-ds-chart-5: #7a4cad;
 
   /* Typography */

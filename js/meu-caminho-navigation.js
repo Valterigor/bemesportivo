@@ -1,7 +1,7 @@
 (function initializeMeuCaminhoNavigation(global) {
   'use strict';
 
-  const mapRequiredViews = new Set(['registrar', 'progresso', 'evolucao', 'explorar']);
+  const mapRequiredViews = new Set(['progresso', 'evolucao', 'explorar']);
   const identityRequiredViews = new Set(['inicio', 'registrar', 'progresso', 'jornada', 'evolucao', 'explorar']);
 
   function isMapRequired(view) {
@@ -14,7 +14,7 @@
       return { view: 'perfil', reason: 'profile', message: 'Primeiro, conclua seu Perfil Be para continuar.' };
     }
     if (hasIdentity && !hasJourney && isMapRequired(requested)) {
-      return { view: 'jornada', reason: 'map', message: 'Conclua seu Mapa BeM para liberar Registrar e Jornada.' };
+      return { view: 'jornada', reason: 'map', message: 'Prepare seu Mapa BeM para receber os próximos passos da jornada. Seu diário já está disponível.' };
     }
     return { view: requested, reason: '', message: '' };
   }
@@ -25,7 +25,7 @@
       gateNote.textContent = !hasIdentity
         ? 'Conclua o Perfil Be para continuar.'
         : !hasJourney
-          ? 'Registrar e Jornada serão liberados após o Mapa BeM.'
+          ? 'Você já pode registrar atividades. O Mapa BeM prepara os próximos passos da jornada.'
           : 'Todas as etapas do seu caminho estão disponíveis.';
       gateNote.hidden = hasJourney || minorRestricted;
     }

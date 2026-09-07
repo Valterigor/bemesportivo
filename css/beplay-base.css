@@ -5,7 +5,7 @@
   --line:rgba(88,245,255,.24);
   --green:#2dff8d;
   --blue:#36d5ff;
-  --gold:#f5ca66;
+  --gold:#f9c68d;
   --text:#f8fbff;
   --muted:#a9bac9;
   --danger:#ff6f6f;
@@ -130,7 +130,7 @@ img{display:block;max-width:100%}
   padding:0 16px;
   border:1px solid #e9e9e9;
   border-radius:999px;
-  background:#fc6e02;
+  background:#e47f0c;
   color:#000;
   font-size:13px;
   font-weight:900;

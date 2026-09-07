@@ -22,8 +22,11 @@ const contactHtml = read('contato.html');
 const privacyHtml = read('politica-de-privacidade.html');
 const contactScript = read('js/contact-form.js');
 const wranglerConfig = read('wrangler.toml');
-assert.match(homeHtml, /data-contact-form[\s\S]*bemesportivo@yahoo\.com/);
-assert.match(contactHtml, /data-contact-form[\s\S]*bemesportivo@yahoo\.com/);
+for (const html of [homeHtml, contactHtml]) {
+  assert.match(html, /data-contact-whatsapp href="https:\/\/wa\.me\/5511986366965"/);
+  assert.match(html, /Prefere e-mail\?[\s\S]*bemesportivo@yahoo\.com/);
+  assert.doesNotMatch(html, /data-contact-form|contact-form\.js/, 'Contato geral deve abrir WhatsApp sem envio automatico de e-mail.');
+}
 assert.doesNotMatch(homeHtml, /data-netlify|newsletter-bem|newsletter=recebido/);
 assert.doesNotMatch(privacyHtml, /infraestrutura de formulários da Netlify|<h2>Newsletter<\/h2>/);
 assert.match(contactScript, /className = 'contact-fallback-link'/, 'O fallback precisa oferecer um link de e-mail acionado pelo visitante.');

@@ -1,5 +1,5 @@
-@import url("css/design-system.css?v=20260814-1");
-@import url("css/premium-refinement.css?v=20260723-2");
+@import url("css/design-system.css?v=20260906-1");
+@import url("css/premium-refinement.css?v=20260906-1");
 
 /* Shared institutional elements */
 *,
@@ -63,7 +63,7 @@ body > header:not(.topbar) > nav::-webkit-scrollbar,
 :root {
   --be-white: #ffffff;
   --be-black: #111111;
-  --be-orange: #fa8a01;
+  --be-orange: #f38e1b;
   --be-soft: #f5f5f5;
   --be-line: #e9e9e9;
   --be-menu-shadow: 0 14px 36px rgba(17, 17, 17, .08);
@@ -554,8 +554,8 @@ body:not(.beplay-page) .hero:not(.shell):not(.sports-dashboard-hero):not(.app-he
   border: 1px solid rgba(255, 255, 255, .08) !important;
   border-radius: 26px !important;
   background:
-    radial-gradient(circle at 82% 12%, rgba(255, 106, 0, .20), transparent 34%),
-    linear-gradient(135deg, #111111, #181818 70%, #261407) !important;
+    radial-gradient(circle at 82% 12%, rgba(227, 127, 12, .20), transparent 34%),
+    linear-gradient(135deg, #111111, #181818 70%, #251502) !important;
   color: #ffffff !important;
   box-shadow: 0 18px 52px rgba(17, 17, 17, .12) !important;
   text-align: left !important;
@@ -637,7 +637,7 @@ body:not(.beplay-page) .hero:not(.shell):not(.sports-dashboard-hero):not(.app-he
 
 /* Shared quality layer */
 :where(a, button, input, textarea, select):focus-visible {
-  outline: 3px solid rgba(255, 106, 0, .55);
+  outline: 3px solid rgba(227, 127, 12, .55);
   outline-offset: 3px;
 }
 
@@ -1027,7 +1027,7 @@ table {
 .site-footer .site-footer-group > strong {
   display: block !important;
   margin: 0 0 16px !important;
-  color: var(--be-orange, #ff6a00) !important;
+  color: var(--be-orange, #e37f0c) !important;
   font-size: 13px !important;
   font-weight: 900 !important;
   letter-spacing: .08em !important;
@@ -1136,9 +1136,9 @@ table {
   padding: 0 !important;
   border: 0 !important;
   border-radius: 50% !important;
-  background: linear-gradient(135deg, #ff8a00 0%, #ffb347 100%) !important;
+  background: linear-gradient(135deg, #f39120 0%, #f7b56a 100%) !important;
   color: #111111 !important;
-  box-shadow: 0 20px 44px rgba(255, 106, 0, .24) !important;
+  box-shadow: 0 20px 44px rgba(227, 127, 12, .24) !important;
   cursor: pointer !important;
   opacity: 0 !important;
   visibility: hidden !important;
@@ -1157,7 +1157,7 @@ table {
 
 .be-back-to-top:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 26px 52px rgba(255, 106, 0, .32) !important;
+  box-shadow: 0 26px 52px rgba(227, 127, 12, .32) !important;
 }
 
 .be-back-to-top svg {
@@ -1361,7 +1361,7 @@ table {
 
 .site-footer {
   background: #070707;
-  border-top: 1px solid rgba(250, 138, 1, .35);
+  border-top: 1px solid rgba(243, 142, 27, .35);
   color: #d7d7d7;
   margin-top: 56px;
   padding: 32px 20px;
@@ -1371,7 +1371,7 @@ table {
 :root {
   --be-white: #ffffff;
   --be-black: #111111;
-  --be-orange: #ff6a00;
+  --be-orange: #e37f0c;
   --be-soft: #f5f5f5;
   --be-line: #e9e9e9;
   --be-muted: #6d6d6d;
@@ -1674,22 +1674,22 @@ button.btn:hover {
 .buy:focus-visible,
 button.btn:focus-visible {
   outline: none !important;
-  box-shadow: 0 0 0 3px rgba(249, 115, 22, .25), 0 12px 24px rgba(17, 17, 17, .16) !important;
+  box-shadow: 0 0 0 3px rgba(230, 128, 12, .25), 0 12px 24px rgba(17, 17, 17, .16) !important;
 }
 
 .filter-btn.active,
 .btn.buy,
 .buy {
-  background: linear-gradient(135deg, var(--be-orange) 0%, #ff8a2b 100%) !important;
+  background: linear-gradient(135deg, var(--be-orange) 0%, #f39122 100%) !important;
   border-color: transparent !important;
   color: var(--be-black) !important;
-  box-shadow: 0 12px 24px rgba(249, 115, 22, .24) !important;
+  box-shadow: 0 12px 24px rgba(230, 128, 12, .24) !important;
 }
 
 .filter-btn.active:hover,
 .btn.buy:hover,
 .buy:hover {
-  background: linear-gradient(135deg, #ff8a2b 0%, var(--be-orange) 100%) !important;
+  background: linear-gradient(135deg, #f39122 0%, var(--be-orange) 100%) !important;
 }
 
 .site-footer {
@@ -1784,7 +1784,7 @@ button.btn:focus-visible {
 }
 
 .site-footer strong {
-  color: #fa8a01;
+  color: #f38e1b;
   display: block;
   font-size: 18px;
   margin-bottom: 6px;
@@ -1803,7 +1803,7 @@ button.btn:focus-visible {
 }
 
 .site-footer a {
-  color: #fa8a01;
+  color: #f38e1b;
   font-weight: 700;
   text-decoration: none;
 }
@@ -1819,14 +1819,14 @@ button.btn:focus-visible {
 }
 
 .legal-page h1 {
-  color: #fa8a01;
+  color: #f38e1b;
   font-size: clamp(32px, 5vw, 52px);
   line-height: 1.1;
   margin: 0 0 18px;
 }
 
 .legal-page h2 {
-  color: #fa8a01;
+  color: #f38e1b;
   font-size: 24px;
   margin: 34px 0 12px;
   text-align: left;
@@ -1864,8 +1864,8 @@ button.btn:focus-visible {
   --site-bg: #f6f8fb;
   --site-ink: #111827;
   --site-muted: #64748b;
-  --site-orange: #f97316;
-  --site-orange-dark: #c2410c;
+  --site-orange: #e6800c;
+  --site-orange-dark: #a35b09;
   --site-blue: #2563eb;
   --site-card: #ffffff;
   --site-line: #e2e8f0;
@@ -1875,7 +1875,7 @@ button.btn:focus-visible {
 
 body {
   background:
-    radial-gradient(circle at 10% 0, rgba(249, 115, 22, .08), transparent 30%),
+    radial-gradient(circle at 10% 0, rgba(230, 128, 12, .08), transparent 30%),
     linear-gradient(180deg, #f8fafc 0, var(--site-bg) 48%, #eef2f7 100%);
   color: var(--site-ink);
   font-family: var(--site-font);
@@ -1904,7 +1904,7 @@ span {
 
 .menu {
   background: rgba(8, 13, 23, .94) !important;
-  border-bottom: 1px solid rgba(249, 115, 22, .26) !important;
+  border-bottom: 1px solid rgba(230, 128, 12, .26) !important;
   box-shadow: 0 12px 34px rgba(15, 23, 42, .22) !important;
   backdrop-filter: blur(18px);
 }
@@ -1928,7 +1928,7 @@ span {
 .nav-menu a:hover,
 .nav-menu a:focus-visible,
 .nav-menu a.active {
-  background: rgba(249, 115, 22, .14);
+  background: rgba(230, 128, 12, .14);
   color: #fff !important;
   transform: translateY(-1px);
 }
@@ -2021,7 +2021,7 @@ span {
 .hero {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .82)),
-    radial-gradient(circle at 12% 0, rgba(249, 115, 22, .12), transparent 34%);
+    radial-gradient(circle at 12% 0, rgba(230, 128, 12, .12), transparent 34%);
   box-shadow: var(--site-shadow);
 }
 
@@ -2032,7 +2032,7 @@ span {
   gap: 22px;
   background:
     linear-gradient(135deg, #0f172a, #1e293b),
-    radial-gradient(circle at 82% 12%, rgba(249, 115, 22, .22), transparent 34%);
+    radial-gradient(circle at 82% 12%, rgba(230, 128, 12, .22), transparent 34%);
   color: #fff;
   overflow: hidden;
 }
@@ -2189,7 +2189,7 @@ span {
 
   .menu-btn {
     align-items: center;
-    border: 1px solid rgba(249, 115, 22, .28);
+    border: 1px solid rgba(230, 128, 12, .28);
     border-radius: 12px;
     display: flex !important;
     height: 42px;
@@ -2198,7 +2198,7 @@ span {
   }
 
   .nav-menu {
-    border-top: 1px solid rgba(249, 115, 22, .22) !important;
+    border-top: 1px solid rgba(230, 128, 12, .22) !important;
     gap: 4px !important;
     padding: 12px 0 14px !important;
   }
@@ -2331,19 +2331,19 @@ span {
 
 /* Bem Esportivo premium app layer */
 :root {
-  --be-orange: #FC6E02;
+  --be-orange: #e47f0c;
   --be-black: #0A0A0A;
   --be-gray: #181818;
   --be-white: #FFFFFF;
   --be-live: #00D95F;
   --be-line: rgba(255, 255, 255, .11);
   --be-muted: #9ca3af;
-  --be-glow: 0 0 34px rgba(252, 110, 2, .28);
+  --be-glow: 0 0 34px rgba(228, 127, 12, .28);
 }
 
 body {
   background:
-    radial-gradient(circle at 12% 4%, rgba(252, 110, 2, .16), transparent 26%),
+    radial-gradient(circle at 12% 4%, rgba(228, 127, 12, .16), transparent 26%),
     radial-gradient(circle at 88% 0, rgba(0, 217, 95, .08), transparent 22%),
     linear-gradient(180deg, #050505 0, #0a0a0a 42%, #111 100%) !important;
   color: #fff !important;
@@ -2355,7 +2355,7 @@ body {
 
 .menu {
   background: rgba(10, 10, 10, .84) !important;
-  border-bottom: 1px solid rgba(252, 110, 2, .34) !important;
+  border-bottom: 1px solid rgba(228, 127, 12, .34) !important;
   backdrop-filter: blur(20px);
 }
 
@@ -2483,7 +2483,7 @@ body {
   align-items: end;
   padding: 24px;
   background:
-    linear-gradient(135deg, rgba(252, 110, 2, .12), rgba(255, 255, 255, .045) 42%, rgba(0, 217, 95, .045)),
+    linear-gradient(135deg, rgba(228, 127, 12, .12), rgba(255, 255, 255, .045) 42%, rgba(0, 217, 95, .045)),
     linear-gradient(180deg, rgba(24, 24, 24, .92), rgba(10, 10, 10, .92));
   overflow: hidden;
 }
@@ -2499,10 +2499,10 @@ body {
   width: max-content;
   max-width: 100%;
   padding: 7px 10px;
-  border: 1px solid rgba(252, 110, 2, .34);
+  border: 1px solid rgba(228, 127, 12, .34);
   border-radius: 999px;
-  background: rgba(252, 110, 2, .12);
-  color: #ffb47b;
+  background: rgba(228, 127, 12, .12);
+  color: #f7b870;
   font-size: 11px;
   font-weight: 900;
   text-transform: uppercase;
@@ -2548,7 +2548,7 @@ body {
 
 .featured-match-card:hover {
   transform: translateY(-4px) scale(1.01);
-  border-color: rgba(252, 110, 2, .55);
+  border-color: rgba(228, 127, 12, .55);
   box-shadow: var(--be-glow), 0 22px 70px rgba(0, 0, 0, .42);
 }
 
@@ -2847,7 +2847,7 @@ body {
 .section-action-head span,
 .seriea-kicker,
 .lineup-kicker {
-  color: #ffb47b !important;
+  color: #f7b870 !important;
 }
 
 @media (max-width: 1100px) {
@@ -2974,7 +2974,7 @@ body > header:not(.site-header):not(.ebook-header):not(.app-topbar):not(.topbar)
   padding: 0 16px !important;
   border: 1px solid var(--be-line, #e9e9e9) !important;
   border-radius: 999px !important;
-  background: var(--be-orange, #ff6a00) !important;
+  background: var(--be-orange, #e37f0c) !important;
   color: #111 !important;
   box-shadow: none !important;
   font-size: 13px !important;
@@ -3073,7 +3073,7 @@ body > main,
   overflow: hidden !important;
   padding: clamp(34px, 7vw, 78px) clamp(20px, 5vw, 58px) !important;
   background:
-    linear-gradient(135deg, #111111, #181818 72%, #241306) !important;
+    linear-gradient(135deg, #111111, #181818 72%, #231402) !important;
   color: #ffffff !important;
 }
 
@@ -3088,7 +3088,7 @@ body > main,
 .legal-kicker,
 .section-title span,
 .eyebrow {
-  color: #ff6a00 !important;
+  color: #e37f0c !important;
   letter-spacing: 0 !important;
 }
 
@@ -3135,10 +3135,10 @@ h3 {
 .action-btn,
 .primary-btn {
   border-radius: 999px !important;
-  background: linear-gradient(135deg, #ff8a00 0%, #ffb347 100%) !important;
+  background: linear-gradient(135deg, #f39120 0%, #f7b56a 100%) !important;
   color: #111111 !important;
   border: 1px solid rgba(255, 255, 255, .18) !important;
-  box-shadow: 0 22px 42px rgba(255, 106, 0, .18) !important;
+  box-shadow: 0 22px 42px rgba(227, 127, 12, .18) !important;
   transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease !important;
   font-weight: 900 !important;
 }
@@ -3152,8 +3152,8 @@ h3 {
 .buy:hover,
 button.btn:hover {
   transform: translateY(-2px) scale(1.01) !important;
-  box-shadow: 0 26px 54px rgba(255, 106, 0, .24) !important;
-  background: linear-gradient(135deg, #ff9f00 0%, #ffc76d 100%) !important;
+  box-shadow: 0 26px 54px rgba(227, 127, 12, .24) !important;
+  background: linear-gradient(135deg, #f5a345 0%, #f9c78f 100%) !important;
 }
 
 .site-footer {
@@ -3456,7 +3456,7 @@ body > header.topbar {
   --be-color-surface: #ffffff;
   --be-color-soft: #f5f5f5;
   --be-color-line: #e9e9e9;
-  --be-color-brand: #ff7a00;
+  --be-color-brand: #ef850d;
   --be-space-1: 4px;
   --be-space-2: 8px;
   --be-space-3: 12px;

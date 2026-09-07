@@ -193,12 +193,14 @@
     const values = entry || seed;
     $('#be-entry-id').value = values.id || '';
     $('#be-entry-date').value = values.date || dayKey();
-    $('#be-entry-type').value = types[values.type] ? values.type : 'corrida';
+    $('#be-entry-type').value = types[values.type] ? values.type : entries[0]?.type || 'corrida';
     $('#be-entry-title').value = values.title || '';
     $('#be-entry-duration').value = values.duration || '';
     $('#be-entry-distance').value = values.distance || '';
     $('#be-entry-result').value = values.result || '';
     $('#be-entry-note').value = values.note || '';
+    const optionalDetails = $('#be-entry-optional-details');
+    if (optionalDetails) optionalDetails.open = Boolean(values.distance || values.result || values.note || values.imageDataUrl);
     pendingEntryImage = values.imageDataUrl || '';
     renderEntryPhotoPreview();
     const visibility = form.querySelector(`input[name="visibility"][value="${values.visibility === 'public' ? 'public' : 'private'}"]`);
@@ -280,6 +282,7 @@
     const gapDays = previousEntry ? Math.round((dateFromKey(entry.date) - dateFromKey(previousEntry.date)) / 86400000) : 0;
     let interaction = 'activity_saved';
     const context = {
+      variantSeed: entry.id,
       activityLabel: titleFor(entry), duration: entry.duration, gapDays, weekCount: sameWeek,
       milestone: entry.distance ? `${formatNumber(entry.distance)} km em ${types[entry.type].label.toLocaleLowerCase('pt-BR')}` : ''
     };
@@ -336,6 +339,40 @@
       profile
     }), 180);
   }
+
+  let rewardEntryId = '';
+
+  function fillRecognition(target, entry) {
+    const response = contextualFeedback(entry, true);
+    target.querySelector('[data-recognition-title]').textContent = response.title;
+    target.querySelector('[data-recognition-message]').textContent = response.message;
+    target.querySelector('[data-recognition-detail]').textContent = response.detail || '';
+    target.querySelector('[data-recognition-summary]').textContent = `${titleFor(entry)} · ${formatDuration(entry.duration)} · ${new Intl.DateTimeFormat('pt-BR').format(dateFromKey(entry.date))}`;
+  }
+
+  function renderRecognition() {
+    const latest = [...entries].sort((a, b) => b.createdAt.localeCompare(a.createdAt))[0];
+    $$('[data-diary-recognition]').forEach(card => {
+      card.hidden = !latest;
+      if (latest) fillRecognition(card, latest);
+    });
+  }
+
+  function showRecognition(entry) {
+    const dialog = $('#be-recognition-dialog');
+    if (!dialog) return;
+    rewardEntryId = entry.id;
+    fillRecognition(dialog, entry);
+    dialog.showModal();
+    $('#be-recognition-done')?.focus();
+  }
+
+  $('#be-recognition-done')?.addEventListener('click', () => $('#be-recognition-dialog').close());
+  $('#be-recognition-share')?.addEventListener('click', () => {
+    const entry = entries.find(item => item.id === rewardEntryId);
+    $('#be-recognition-dialog').close();
+    if (entry) openActivityShareCard(entry);
+  });
 
   function entryCard(entry) {
     const details = [
@@ -656,6 +693,7 @@
   }
 
   function renderAll() {
+    renderRecognition();
     renderToday();
     renderMeals();
     renderDashboardOverview();
@@ -683,7 +721,7 @@
     $('#be-quick-feedback').textContent = '';
     const interaction = contextualFeedback(entry, true);
     emitFeedback(interaction);
-    openActivityShareCard(entry);
+    showRecognition(entry);
   });
 
   $$('[data-be-activity]').forEach(button => button.addEventListener('click', () => openEntry({ type: button.dataset.beActivity, date: dayKey() })));
@@ -738,7 +776,7 @@
         emitFeedback({ tone: 'care', title: 'Registro salvo apenas no diário.', message: error?.message || 'Não foi possível publicar agora.' });
       }
     }
-    openActivityShareCard(entry);
+    if (!previous) showRecognition(entry);
   });
   $('#be-entry-delete')?.addEventListener('click', () => {
     const id = $('#be-entry-id').value;

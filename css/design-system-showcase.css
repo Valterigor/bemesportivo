@@ -1,7 +1,7 @@
 .ds-page {
   min-width: 0;
   background:
-    radial-gradient(circle at 88% 2%, rgb(255 122 0 / 7%), transparent 24rem),
+    radial-gradient(circle at 88% 2%, rgb(239 133 13 / 7%), transparent 24rem),
     var(--be-ds-color-background);
 }
 
@@ -266,7 +266,7 @@
   width: 28rem;
   height: 28rem;
   border-radius: 50%;
-  background: rgb(255 122 0 / 22%);
+  background: rgb(239 133 13 / 22%);
   filter: blur(2px);
   content: "";
 }

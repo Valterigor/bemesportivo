@@ -20,7 +20,7 @@
 }
 
 .be-button:hover {
-  background: #ff811f;
+  background: #f38a12;
   box-shadow: var(--be-ds-shadow-sm);
   transform: translateY(-1px);
 }

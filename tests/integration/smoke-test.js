@@ -210,7 +210,7 @@ async function run() {
     assert.ok(fs.existsSync(path.join(root, 'img', 'elas-em-movimento-video-poster.jpg')));
     assert.match(elasReport, /<div class="elas-story-header">/);
     assert.doesNotMatch(elasReport, /<header class="elas-story-header">/);
-    assert.match(elasReport, /site-common\.css\?v=20260814-1[\s\S]*reportagens\.css\?v=20260814-7/);
+    assert.match(elasReport, /site-common\.css\?v=20260906-1[\s\S]*reportagens\.css\?v=20260906-1/);
     assert.doesNotMatch(elasReport, /elas-photo-badge/);
     assert.match(elasReport, /mulheres-em-movimento-serra-talhada-interna\.jpg/);
     assert.match(elasReport, /class="report-byline"[\s\S]*4 min de leitura/);
@@ -263,7 +263,7 @@ async function run() {
     assert.ok(fs.existsSync(path.join(root, 'img', 'sergio-lima-exemplo-de-vida.jpg')), 'Capa da entrevista de Sergio Lima ausente.');
     for (const reportFile of ['reportagem-elas-em-movimento-serra-talhada.html', 'reportagem-treino-funcional.html', 'reportagem-dedicacao-talento-mirim.html', 'reportagem-duda-e-o-futebol.html', 'reportagem-elas-trazem-esperanca.html', 'reportagem-mayara-magnolia-papo-bem-esportivo.html', 'reportagem-sergio-lima-exemplo-de-vida.html']) {
       const reportHtml = fs.readFileSync(path.join(root, reportFile), 'utf8');
-      assert.match(reportHtml, /reportagens\.css\?v=20260814-7/, `A reportagem precisa carregar o modelo editorial atualizado: ${reportFile}`);
+      assert.match(reportHtml, /reportagens\.css\?v=20260906-1/, `A reportagem precisa carregar o modelo editorial atualizado: ${reportFile}`);
       assert.match(reportHtml, /data-share-copy/, `A reportagem precisa oferecer cópia direta do link: ${reportFile}`);
       assert.match(reportHtml, /class="report-path-bridge"[\s\S]*Começar minha trajetória/, `A reportagem precisa conectar leitura e trajetória: ${reportFile}`);
     }
@@ -305,15 +305,15 @@ async function run() {
     assert.match(homeHtml, /id="be-ecosystem-search-input"[^>]*aria-label="O que você busca no esporte\?"/, 'O campo principal de busca precisa ter um nome acessível independente do placeholder.');
     assert.match(homeHtml, /id="be-home-path-cta"[^>]*href="\/meu-caminho-be\/registrar"[\s\S]*?id="be-home-path-cta-label">Registrar minha atividade/, 'A Home precisa oferecer um caminho principal para registrar atividades.');
     assert.doesNotMatch(homeHtml, /class="be-search-secondary-label"/, "Hero sem texto secundario redundante.");
-    assert.match(homeHtml, /js\/home-path-cta\.js\?v=20260905-2/, 'A Home precisa adaptar o chamado principal ao estágio da pessoa.');
+    assert.match(homeHtml, /js\/home-path-cta\.js\?v=20260906-2/, 'A Home precisa adaptar o chamado principal ao estágio da pessoa.');
     assert.doesNotMatch(homeHtml, /class="home-search-examples"/, "Hero sem atalhos extras.");
-    assert.match(homeHtml, /css\/be-ecosystem-search\.css\?v=20260905-1/, 'A Home precisa carregar a versão atual do visual da busca.');
+    assert.match(homeHtml, /css\/be-ecosystem-search\.css\?v=20260906-1/, 'A Home precisa carregar a versão atual do visual da busca.');
     assert.match(homeHtml, /id="be-products-scroll-hint"[\s\S]*?Deslize para explorar/, 'A navegação lateral da Home precisa orientar o gesto no mobile.');
     assert.match(homeHtml, /js\/be-products-carousel\.js\?v=20260831-2/, 'A Home precisa carregar o movimento progressivo dos atalhos.');
     const professionalsHtml = fs.readFileSync(path.join(root, 'profissionais.html'), 'utf8');
     const professionalsScript = fs.readFileSync(path.join(root, 'js/profissionais.js'), 'utf8');
     assert.match(professionalsHtml, /id="professionals-hero-title">Encontre quem pode ajudar no seu próximo passo\./, 'Profissionais precisa começar pela necessidade da pessoa.');
-    assert.match(professionalsHtml, /css\/profissionais\.css\?v=20260823-3/);
+    assert.match(professionalsHtml, /css\/profissionais\.css\?v=20260906-1/);
     assert.match(professionalsHtml, /js\/profissionais\.js\?v=20260823-2/);
     assert.match(professionalsHtml, /id="como-funciona"[\s\S]*data-guide-category="personal"[\s\S]*data-guide-category="psicologia"[\s\S]*data-guide-category="fotografia"[\s\S]*data-guide-category="todos"/, 'Profissionais precisa orientar a escolha antes de exibir os perfis.');
     assert.match(professionalsHtml, /id="profissionais"[\s\S]*id="result-count"[\s\S]*id="lista"/, 'A lista precisa informar quantos profissionais correspondem à busca.');
@@ -360,7 +360,7 @@ async function run() {
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/game"[\s\S]*?<strong>Game 3D<\/strong><small>Divirta-se<\/small>/, 'Game 3D precisa abrir seu destino exato.');
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/meu-caminho-be\?tela=conteudos"[\s\S]*?<strong>Conhecimento<\/strong>/, 'Conhecimento precisa abrir seu painel sem redirecionamento de produção.');
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/meu-caminho-be\?tela=ferramentas"[\s\S]*?<strong>Ferramentas<\/strong>/, 'Ferramentas precisa abrir seu painel sem redirecionamento de produção.');
-    assert.match(homeHtml, /src="js\/be-sports-library\.js\?v=20260829-5"[\s\S]*src="js\/be-ecosystem-search\.js\?v=20260905-2"/, 'A Home precisa carregar a Biblioteca Esportiva antes da busca determinística.');
+    assert.match(homeHtml, /src="js\/be-sports-library\.js\?v=20260829-5"[\s\S]*src="js\/be-ecosystem-search\.js\?v=20260906-1"/, 'A Home precisa carregar a Biblioteca Esportiva antes da busca determinística.');
     const ecosystemSearch = require(path.join(root, 'js', 'be-ecosystem-search.js'));
     assert.equal(ecosystemSearch.search('Quero saber como melhorar meu chute').primary.id, 'conteudo');
     assert.equal(ecosystemSearch.search('Quero assistir').primary.id, 'beplay');
@@ -517,18 +517,18 @@ async function run() {
     assert.match(pathHtml, /id="be-ia-answer"[^>]*aria-live="polite"/);
     assert.match(pathHtml, /js\/be-knowledge-library\.js\?v=20260821-4/);
     assert.match(pathHtml, /js\/be-ia\.js\?v=20260806-1/);
-    assert.match(pathHtml, /css\/meu-caminho-modern\.css\?v=20260806-1/);
-    assert.match(pathHtml, /js\/meu-caminho-navigation\.js\?v=20260823-2/);
+    assert.match(pathHtml, /css\/meu-caminho-modern\.css\?v=20260906-1/);
+    assert.match(pathHtml, /js\/meu-caminho-navigation\.js\?v=20260906-2/);
     assert.match(pathHtml, /js\/meu-caminho-account\.js\?v=20260823-2/);
-    assert.match(pathHtml, /js\/fala-bem-app\.js\?v=20260905-1/);
+    assert.match(pathHtml, /js\/fala-bem-app\.js\?v=20260906-2/);
     assert.match(pathHtml, /js\/coluna-valtinho\.js\?v=20260823-1/);
-    assert.match(pathHtml, /css\/meu-caminho-diary\.css\?v=20260902-3/);
-    assert.match(pathHtml, /css\/meu-caminho-navigation\.css\?v=20260901-2/);
-    assert.match(pathHtml, /css\/fala-bem-platform\.css\?v=20260823-1/);
+    assert.match(pathHtml, /css\/meu-caminho-diary\.css\?v=20260906-1/);
+    assert.match(pathHtml, /css\/meu-caminho-navigation\.css\?v=20260906-1/);
+    assert.match(pathHtml, /css\/fala-bem-platform\.css\?v=20260906-1/);
     assert.match(pathHtml, /js\/site-common\.js\?v=20260830-2/);
     assert.match(pathHtml, /class="fb-app-brand" href="\/"/, 'O logo do cabeçalho precisa voltar para a home principal.');
     assert.match(pathHtml, /class="be-showcase-brand" href="\/"[^>]*><strong>MEU CAMINHO BE<\/strong><\/a>/, 'A identificação da apresentação deve ter somente o texto clicável.');
-    assert.match(pathHtml, /js\/meu-caminho-diary\.js\?v=20260905-1/);
+    assert.match(pathHtml, /js\/meu-caminho-diary\.js\?v=20260906-2/);
     assert.match(pathHtml, /id="be-profile-public-access-action"[^>]*>Ativar Meu Diário BE<\/button>/, 'O Perfil BE precisa deixar clara a ativação do Diário BE.');
     assert.match(publicDiaryScript, /Visualizar Meu Diário BE/, 'O botão deve mudar para visualizar o diário depois da publicação.');
     assert.match(publicDiaryScript, /dataset\.bePublicEdit/, 'A pessoa precisa conseguir editar publicações do Diário BE.');
@@ -629,7 +629,7 @@ async function run() {
     assert.match(platformCss, /@media\(max-width:760px\)\{\.fb-save-receipt\{display:none!important\}\}/, 'A confirmação persistente não deve ocupar a tela no celular.');
 
     const modernCss = fs.readFileSync(path.join(root, 'css/meu-caminho-modern.css'), 'utf8');
-    assert.match(modernCss, /--mcb-orange:#f4511e/);
+    assert.match(modernCss, /--mcb-orange:#cd730b/);
     assert.match(modernCss, /@media\(min-width:901px\)\{[\s\S]*?grid-template-columns:224px minmax\(0,1fr\)/);
     assert.match(modernCss, /@media\(max-width:900px\)\{[\s\S]*?position:fixed!important/);
     assert.match(modernCss, /#be-ia:not\(\.fb-progressive-open\)/);
@@ -672,7 +672,7 @@ async function run() {
     assert.match(appScript, /function renderSectionBanner\(primarySection\)/);
     assert.match(navigationScript, /resolveRequestedView/);
     assert.match(navigationScript, /updateGates/);
-    assert.match(navigationScript, /Registrar e Jornada serão liberados após o Mapa BeM/);
+    assert.match(navigationScript, /Você já pode registrar atividades/);
     assert.match(appScript, /function hasProfileIdentity\(profile = currentProfile\)/);
     assert.match(navigationScript, /!hasIdentity && identityRequiredViews\.has\(requested\)/, 'Somente as etapas pessoais devem aguardar a criacao do Perfil Be.');
     assert.match(navigationScript, /identityRequiredViews = new Set\(\['inicio', 'registrar', 'progresso', 'jornada', 'evolucao', 'explorar'\]\)/);
@@ -748,7 +748,7 @@ async function run() {
     assert.doesNotMatch(redirects, /^\/reportagens\s+/m, 'A rota /reportagens deve ser resolvida diretamente pelo arquivo reportagens.html, sem redirecionamento de caixa.');
 
     const serviceWorker = fs.readFileSync(path.join(root, 'sw.js'), 'utf8');
-    assert.match(serviceWorker, /CACHE_NAME = `\$\{CACHE_PREFIX\}v138`/);
+    assert.match(serviceWorker, /CACHE_NAME = `\$\{CACHE_PREFIX\}v140`/);
     const coreShellSource = serviceWorker.match(/const CORE_SHELL = \[([\s\S]*?)\];/)?.[1] || '';
     const coreShell = [...coreShellSource.matchAll(/'([^']+)'/g)].map(match => match[1]);
     const currentAppAssets = [...pathHtml.matchAll(/(?:href|src)="(\/(?:css|js)\/[^"?]+|\/site-common\.css)(?:\?[^"#]+)?"/g)]

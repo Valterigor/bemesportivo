@@ -47,7 +47,7 @@ body.reportagens-page {
   padding: clamp(42px, 7vw, 76px);
   border-radius: 26px;
   background:
-    linear-gradient(135deg, #111111, #181818 70%, #2a1607) !important;
+    linear-gradient(135deg, #111111, #181818 70%, #291702) !important;
   text-align: left;
   box-shadow: 0 18px 52px rgba(17, 17, 17, .12);
 }
@@ -104,7 +104,7 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-media-stack:focus-visible {
-  outline: 3px solid rgba(250, 138, 1, .48);
+  outline: 3px solid rgba(243, 142, 27, .48);
   outline-offset: -3px;
 }
 
@@ -271,7 +271,7 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-links > a:not(.btn) {
-  color: #d95d00;
+  color: #c36d0a;
   font-weight: 800;
 }
 
@@ -340,14 +340,14 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-share-instagram {
-  background: linear-gradient(135deg, #833ab4, #fd1d1d 58%, #fcb045);
+  background: linear-gradient(135deg, #833ab4, #fd1d1d 58%, #f7b162);
   box-shadow: 0 9px 22px rgba(193, 53, 132, .2);
 }
 
 .reportagens-page .report-share-copy > span {
   display: block;
   margin-bottom: 5px;
-  color: #c84416;
+  color: #a95e09;
   font-size: .66rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -355,7 +355,7 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-share-download {
-  color: #bd5200;
+  color: #ab5f09;
   font-size: .82rem;
   font-weight: 800;
 }
@@ -389,7 +389,7 @@ body.reportagens-page {
 .reportagens-page .report-comments-heading > span {
   display: block;
   margin-bottom: 6px;
-  color: #c84416;
+  color: #a95e09;
   font-size: .67rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -439,8 +439,8 @@ body.reportagens-page {
 
 .reportagens-page .report-comment-form input:focus,
 .reportagens-page .report-comment-form textarea:focus {
-  border-color: #ee6a1c;
-  outline: 3px solid rgba(238, 106, 28, .14);
+  border-color: #d9790b;
+  outline: 3px solid rgba(217, 121, 11, .14);
 }
 
 .reportagens-page .report-comment-form > label:not(.sr-only):not(.be-honeypot) {
@@ -738,7 +738,7 @@ body.reportagens-page {
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 8px;
     scrollbar-width: thin;
-    scrollbar-color: #fa8a01 #ece8e4;
+    scrollbar-color: #f38e1b #ece8e4;
   }
 
   .reportagens-page #treino-funcional-br-assessoria .report-media-stack > img,
@@ -782,7 +782,7 @@ body.reportagens-page {
   .reportagens-page .report-body .meta {
     margin: 0 0 20px;
     padding: 11px 12px;
-    border-left: 3px solid #fa8a01;
+    border-left: 3px solid #f38e1b;
     border-radius: 0 9px 9px 0;
     background: #faf7f3;
     font-size: .75rem;
@@ -875,7 +875,7 @@ body.reportagens-page {
 /* Vitrine de reportagens: os textos completos permanecem nas paginas individuais. */
 .reportagens-page .page-hero-kicker {
   margin: 0 0 8px;
-  color: #ff9418 !important;
+  color: #f49a32 !important;
   font: 800 .78rem/1 "Inter", sans-serif;
   letter-spacing: .12em;
   text-transform: uppercase;
@@ -962,7 +962,7 @@ body.reportagens-page {
 
 .reportagens-page .report-category,
 .reportagens-page .report-section-eyebrow {
-  color: #cf5700;
+  color: #b9670a;
   font: 800 .76rem/1.2 "Inter", sans-serif;
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -1047,7 +1047,7 @@ body.reportagens-page {
   height: 30px;
   place-items: center;
   border-radius: 8px;
-  background: #ff9418;
+  background: #f49a32;
   color: #111111;
   font-size: 1rem;
   line-height: 1;
@@ -1056,7 +1056,7 @@ body.reportagens-page {
 .reportagens-page .report-read-link {
   margin-top: auto;
   padding-top: 22px;
-  color: #c65300;
+  color: #b16309;
 }
 
 .reportagens-page .report-read-button:hover,
@@ -1070,7 +1070,7 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-read-button:focus-visible {
-  outline: 3px solid rgba(255, 148, 24, .5);
+  outline: 3px solid rgba(244, 154, 50, .5);
   outline-offset: 3px;
 }
 
@@ -1124,11 +1124,11 @@ body.reportagens-page {
   border: 1px solid #f0c9b7;
   border-radius: 20px;
   background: linear-gradient(135deg, #fff4ee, #fff 72%);
-  box-shadow: 0 14px 34px rgba(64, 35, 22, .07);
+  box-shadow: 0 14px 34px rgba(64, 36, 3, .07);
 }
 
 .reportagens-page .report-service > span {
-  color: #d94816;
+  color: #b6660a;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .13em;
@@ -1221,7 +1221,7 @@ body.reportagens-page {
   border: 0;
   border-radius: 28px;
   background: #111;
-  box-shadow: 0 24px 65px rgba(23, 13, 10, .2);
+  box-shadow: 0 24px 65px rgba(24, 13, 1, .2);
 }
 
 .reportagens-page .report-card-elas .report-media-stack > .report-cover {
@@ -1258,7 +1258,7 @@ body.reportagens-page {
   border: 1px solid rgba(232, 224, 218, .9);
   border-radius: 26px;
   background: rgba(255, 255, 255, .97);
-  box-shadow: 0 22px 54px rgba(30, 18, 13, .14);
+  box-shadow: 0 22px 54px rgba(32, 18, 2, .14);
   backdrop-filter: blur(14px);
 }
 
@@ -1270,7 +1270,7 @@ body.reportagens-page {
   padding: 7px 11px;
   border-radius: 999px;
   background: #fff0e9;
-  color: #c83d12;
+  color: #a55c09;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .09em;
@@ -1314,7 +1314,7 @@ body.reportagens-page {
 .reportagens-page .report-lead::first-letter {
   float: left;
   margin: .08em .12em 0 0;
-  color: #e4551d;
+  color: #c56e0a;
   font-size: 3.8em;
   font-weight: 900;
   line-height: .76;
@@ -1336,7 +1336,7 @@ body.reportagens-page {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  background: #ff8a00;
+  background: #f39120;
   color: #fff;
   font-size: 1rem;
   font-weight: 900;
@@ -1377,14 +1377,14 @@ body.reportagens-page {
   margin-bottom: 30px;
   padding: 22px 24px;
   border: 1px solid #eadfd7;
-  border-left: 4px solid #f2762e;
+  border-left: 4px solid #e5800c;
   border-radius: 16px;
   background: #fffaf6;
 }
 
 .reportagens-page .report-archive-note > span,
 .reportagens-page .report-athlete-profiles > span {
-  color: #cf4d1d;
+  color: #b36409;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -1412,7 +1412,7 @@ body.reportagens-page {
 
 .reportagens-page .report-athlete-profiles > div { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 19px; }
 .reportagens-page .report-athlete-profiles article { padding: 20px; border: 1px solid #e9dfd7; border-radius: 16px; background: #fff; }
-.reportagens-page .report-athlete-profiles article > span { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 14px; border-radius: 50%; background: #fff0e8; color: #d94e18; font-size: .72rem; font-weight: 900; }
+.reportagens-page .report-athlete-profiles article > span { display: grid; place-items: center; width: 38px; height: 38px; margin-bottom: 14px; border-radius: 50%; background: #fff0e8; color: #ba680a; font-size: .72rem; font-weight: 900; }
 .reportagens-page .report-athlete-profiles h3 { margin: 0 0 10px; font-size: 1.08rem; line-height: 1.3; }
 .reportagens-page .report-athlete-profiles article p { margin: 0 0 10px; color: #5f5852; font-size: .9rem; line-height: 1.65; }
 .reportagens-page .report-athlete-profiles article p:last-child { margin-bottom: 0; }
@@ -1427,7 +1427,7 @@ body.reportagens-page {
 }
 
 .reportagens-page .report-archive-photo-gallery-heading > span {
-  color: #cf4d1d;
+  color: #b36409;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -1518,7 +1518,7 @@ body.reportagens-page {
   width: 42px;
   height: 3px;
   border-radius: 999px;
-  background: #f2762e;
+  background: #e5800c;
   content: "";
 }
 
@@ -1533,7 +1533,7 @@ body.reportagens-page {
 
 .reportagens-page .report-video-context > span,
 .reportagens-page .report-related > span {
-  color: #d34d20;
+  color: #b5650a;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -1558,7 +1558,7 @@ body.reportagens-page {
   border: 1px solid #eadfd8;
   border-radius: 22px;
   background: #111;
-  box-shadow: 0 18px 44px rgba(30, 18, 13, .14);
+  box-shadow: 0 18px 44px rgba(32, 18, 2, .14);
 }
 
 .reportagens-page .report-video-feature video {
@@ -1609,29 +1609,29 @@ body.reportagens-page {
 .reportagens-page .report-related > h2 { margin: 8px 0 22px; color: #191715; font-size: clamp(1.5rem, 3vw, 2.1rem); letter-spacing: -.03em; }
 .reportagens-page .report-related > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .reportagens-page .report-related a { display: flex; min-height: 330px; padding: 0 19px 19px; overflow: hidden; flex-direction: column; border: 1px solid #eadfd8; border-radius: 16px; background: #fff; color: #211d1a; text-decoration: none; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-.reportagens-page .report-related a:hover { border-color: #ffb184; box-shadow: 0 14px 28px rgba(55, 30, 18, .1); transform: translateY(-3px); }
+.reportagens-page .report-related a:hover { border-color: #ffb184; box-shadow: 0 14px 28px rgba(55, 31, 3, .1); transform: translateY(-3px); }
 .reportagens-page .report-related img { display: block; width: calc(100% + 38px); height: auto; margin: 0 -19px 17px; aspect-ratio: 16 / 10; object-fit: cover; }
 .reportagens-page .report-related a:nth-child(2) img,
 .reportagens-page .report-related a:nth-child(3) img { object-position: center 28%; }
-.reportagens-page .report-related small { color: #c94b22; font-size: .67rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+.reportagens-page .report-related small { color: #ae6109; font-size: .67rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
 .reportagens-page .report-related h3 { margin: 10px 0 12px; font-size: 1rem; line-height: 1.35; }
 .reportagens-page .report-related-meta { margin-bottom: 18px; color: #817871; font-size: .72rem; }
-.reportagens-page .report-related b { margin-top: auto; color: #c83d12; font-size: .8rem; }
+.reportagens-page .report-related b { margin-top: auto; color: #a55c09; font-size: .8rem; }
 
 .reportagens-page .report-path-bridge {
   max-width: 1120px;
   margin: clamp(34px, 6vw, 72px) auto 0;
   padding: clamp(28px, 5vw, 52px);
   border-radius: 26px;
-  background: linear-gradient(135deg, #171513, #2b1a10);
+  background: linear-gradient(135deg, #171513, #2e1902);
   color: #ffffff;
-  box-shadow: 0 22px 50px rgba(28, 19, 14, .16);
+  box-shadow: 0 22px 50px rgba(32, 18, 2, .16);
 }
-.reportagens-page .report-path-bridge > span { color: #ff9a4a; font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
+.reportagens-page .report-path-bridge > span { color: #f5a03f; font-size: .7rem; font-weight: 900; letter-spacing: .12em; }
 .reportagens-page .report-path-bridge h2 { max-width: 820px; margin: 12px 0; color: #ffffff; font-size: clamp(1.75rem, 4vw, 3.15rem); line-height: 1.08; letter-spacing: -.04em; }
 .reportagens-page .report-path-bridge p { max-width: 740px; margin: 0; color: #d8d0ca; font-size: 1rem; line-height: 1.65; }
-.reportagens-page .report-path-bridge a { display: inline-flex; min-height: 48px; align-items: center; gap: 10px; margin-top: 23px; padding: 0 18px; border-radius: 12px; background: #ff6a00; color: #17120f; font-weight: 900; text-decoration: none; }
-.reportagens-page .report-path-bridge a:hover { background: #ff8a2b; transform: translateY(-2px); }
+.reportagens-page .report-path-bridge a { display: inline-flex; min-height: 48px; align-items: center; gap: 10px; margin-top: 23px; padding: 0 18px; border-radius: 12px; background: #e37f0c; color: #17120f; font-weight: 900; text-decoration: none; }
+.reportagens-page .report-path-bridge a:hover { background: #f39122; transform: translateY(-2px); }
 
 @media (max-width: 640px) {
   .reportagens-page .report-path-bridge { margin-right: 12px; margin-left: 12px; padding: 26px 20px; border-radius: 20px; }
@@ -1697,7 +1697,7 @@ body.reportagens-page {
 
 .reportagens-page .report-cover-theme span {
   margin-bottom: 7px;
-  color: #ff851f;
+  color: #f38d18;
   font-size: clamp(.68rem, 1.2vw, .9rem);
   font-weight: 900;
   letter-spacing: .08em;
@@ -1725,14 +1725,14 @@ body.reportagens-page {
   margin: 36px 0;
   padding: clamp(24px, 4vw, 34px);
   border-radius: 22px;
-  background: linear-gradient(135deg, #181513, #302118);
+  background: linear-gradient(135deg, #181513, #371f03);
   color: #fff;
 }
 
 .reportagens-page .report-interview-highlight > span,
 .reportagens-page .report-interview-video > div:first-child > span,
 .reportagens-page .report-archive-channels > span {
-  color: #ff9a58;
+  color: #f5a040;
   font-size: .68rem;
   font-weight: 900;
   letter-spacing: .12em;
@@ -1788,13 +1788,13 @@ body.reportagens-page {
   align-items: center;
   gap: 8px;
   margin-top: 16px;
-  color: #c94516;
+  color: #aa5f09;
   font-size: .84rem;
   font-weight: 850;
   text-decoration: none;
 }
 
-.reportagens-page .report-interview-video > a:hover { color: #8e2d0c; }
+.reportagens-page .report-interview-video > a:hover { color: #754106; }
 
 /* Espaços editoriais preparados antes do recebimento dos arquivos finais. */
 .reportagens-page .report-media-placeholder,
@@ -1803,17 +1803,17 @@ body.reportagens-page {
   display: grid;
   min-height: 280px;
   padding: clamp(24px, 4vw, 46px);
-  border: 1px dashed rgba(255, 90, 0, .48);
+  border: 1px dashed rgba(217, 121, 11, .48);
   border-radius: 16px;
   background: linear-gradient(135deg, #fff6f0, #f5eee9);
-  color: #4b3224;
+  color: #542f04;
   place-content: center;
   text-align: center;
 }
 .reportagens-page .report-media-placeholder span,
 .reportagens-page .report-media-slot > span,
 .reportagens-page .report-photo-slot > div:first-child > span {
-  color: #d94e00;
+  color: #ba670a;
   font-size: .7rem;
   font-weight: 900;
   letter-spacing: .11em;
@@ -1828,7 +1828,7 @@ body.reportagens-page {
 .reportagens-page .report-media-slot > p,
 .reportagens-page .report-photo-slot > div:first-child > p { margin: 0 0 20px; color: #625a54; line-height: 1.65; }
 .reportagens-page .report-media-slot-frame { min-height: 260px; gap: 12px; }
-.reportagens-page .report-media-slot-frame > span { display: grid; width: 48px; height: 48px; border-radius: 50%; background: #ff5a00; color: #fff; place-items: center; }
+.reportagens-page .report-media-slot-frame > span { display: grid; width: 48px; height: 48px; border-radius: 50%; background: #d9790b; color: #fff; place-items: center; }
 .reportagens-page .report-media-slot-frame strong { font-size: 1rem; }
 .reportagens-page .report-photo-slot-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .reportagens-page .report-photo-slot-grid span { display: grid; min-height: 144px; border: 1px dashed #d5c4b8; border-radius: 13px; background: #fff; color: #8c7668; font-size: .78rem; font-weight: 800; place-items: center; }
@@ -1839,7 +1839,7 @@ body.reportagens-page {
   overflow: hidden;
   border-color: #e4d3c7;
   background: linear-gradient(145deg, #fffaf6 0%, #fff 55%, #f7eee8 100%);
-  box-shadow: 0 20px 48px rgba(48, 29, 20, .08);
+  box-shadow: 0 20px 48px rgba(51, 28, 3, .08);
 }
 .reportagens-page .report-card-thais .report-photo-story::before {
   position: absolute;
@@ -1848,7 +1848,7 @@ body.reportagens-page {
   width: 280px;
   height: 280px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 90, 0, .13), transparent 68%);
+  background: radial-gradient(circle, rgba(217, 121, 11, .13), transparent 68%);
   content: "";
   pointer-events: none;
 }
@@ -1879,7 +1879,7 @@ body.reportagens-page {
   border: 1px solid #e9ddd5;
   border-radius: 16px;
   background: #fff;
-  box-shadow: 0 10px 24px rgba(42, 27, 20, .07);
+  box-shadow: 0 10px 24px rgba(46, 26, 2, .07);
 }
 .reportagens-page .report-card-thais .report-photo-story-trigger {
   position: relative;
@@ -1899,7 +1899,7 @@ body.reportagens-page {
   transition: transform .35s ease, filter .35s ease;
 }
 .reportagens-page .report-card-thais .report-photo-story-trigger:hover img { transform: scale(1.035); filter: saturate(1.05); }
-.reportagens-page .report-card-thais .report-photo-story-trigger:focus-visible { outline: 3px solid #ff5a00; outline-offset: -3px; }
+.reportagens-page .report-card-thais .report-photo-story-trigger:focus-visible { outline: 3px solid #d9790b; outline-offset: -3px; }
 .reportagens-page .report-card-thais .report-photo-story-trigger .report-photo-story-number {
   position: absolute;
   top: 10px;
@@ -1925,7 +1925,7 @@ body.reportagens-page {
   border: 0;
   border-radius: 0;
   background: transparent;
-  color: #d94e00;
+  color: #ba670a;
   font-size: .62rem;
   font-weight: 900;
   letter-spacing: .09em;
@@ -1977,7 +1977,7 @@ body.reportagens-page {
   transition: border-color .2s ease, transform .2s ease;
 }
 
-.reportagens-page .report-archive-channels a:hover { border-color: #f5a476; transform: translateY(-2px); }
+.reportagens-page .report-archive-channels a:hover { border-color: #f6a64b; transform: translateY(-2px); }
 .reportagens-page .report-archive-channels small { margin-top: 4px; color: #776f69; font-size: .76rem; }
 
 @media (max-width: 520px) {

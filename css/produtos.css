@@ -1,6 +1,6 @@
 :root{
---primary:#fc6e02;
---secondary:#9a5700;
+--primary:#e47f0c;
+--secondary:#9b5608;
 --dark:#111;
 --light:#f7f8fa;
 --radius:18px;
@@ -134,7 +134,7 @@ letter-spacing:.5px;
 .btn-contato:hover{
 background:#fff;
 transform:translateY(-2px);
-box-shadow:0 6px 15px rgba(252,110,2,.4);
+box-shadow:0 6px 15px rgba(228,127,12,.4);
 }
 
 .menu-btn{
@@ -206,7 +206,7 @@ display:flex;
 
 .menu nav a{
 padding:15px 20px;
-border-bottom:1px solid rgba(252,110,2,.2);
+border-bottom:1px solid rgba(228,127,12,.2);
 text-align:left;
 }
 
@@ -231,7 +231,7 @@ order:3;
 
 .search{
 background:#111;
-border:1px solid rgba(252,110,2,.35);
+border:1px solid rgba(228,127,12,.35);
 color:#fff;
 padding:11px 42px 11px 16px;
 border-radius:35px;
@@ -276,8 +276,8 @@ background:var(--primary);
 /* HERO */
 .hero{
 background:
-radial-gradient(circle at top right,rgba(252,110,2,.2),transparent 45%),
-linear-gradient(135deg,#111,#1b1b1b 70%,#2d1707);
+radial-gradient(circle at top right,rgba(228,127,12,.2),transparent 45%),
+linear-gradient(135deg,#111,#1b1b1b 70%,#2b1802);
 color:#fff;
 padding:90px 20px 70px;
 }
@@ -292,8 +292,8 @@ text-align:center;
 display:inline-block;
 padding:10px 18px;
 border-radius:30px;
-background:rgba(252,110,2,.16);
-border:1px solid rgba(252,110,2,.35);
+background:rgba(228,127,12,.16);
+border:1px solid rgba(228,127,12,.35);
 font-weight:800;
 margin-bottom:26px;
 }

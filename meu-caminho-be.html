@@ -24,20 +24,22 @@
 <link rel="canonical" href="https://bemesportivo.com/meu-caminho-be">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@500;600;700;800&family=Rubik:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="/site-common.css?v=20260814-1">
-<link rel="stylesheet" href="/css/coluna-valtinho.css?v=20260721-1">
-<link rel="stylesheet" href="/css/fala-bem-platform.css?v=20260823-1">
-<link rel="stylesheet" href="/css/be-ia.css?v=20260729-1">
-<link rel="stylesheet" href="/css/premium-refinement.css?v=20260723-2">
-<link rel="stylesheet" href="/css/routine-calendar.css?v=20260722-1">
-<link rel="stylesheet" href="/css/ui-polish.css?v=20260723-3">
-<link rel="stylesheet" href="/css/meu-caminho-modern.css?v=20260806-1">
-<link rel="stylesheet" href="/css/meu-caminho-diary.css?v=20260902-3">
-<link rel="stylesheet" href="/css/meu-caminho-navigation.css?v=20260901-2">
-<link rel="stylesheet" href="/css/meu-caminho-profile.css?v=20260826-3">
-<link rel="stylesheet" href="/css/share-card.css?v=20260830-1">
-<link rel="stylesheet" href="/css/mobile-typography.css?v=20260830-1">
-<link rel="stylesheet" href="/css/readability.css?v=20260830-1">
+<link rel="stylesheet" href="/site-common.css?v=20260906-1">
+<link rel="stylesheet" href="/css/coluna-valtinho.css?v=20260906-1">
+<link rel="stylesheet" href="/css/fala-bem-platform.css?v=20260906-1">
+<link rel="stylesheet" href="/css/be-ia.css?v=20260906-1">
+<link rel="stylesheet" href="/css/premium-refinement.css?v=20260906-1">
+<link rel="stylesheet" href="/css/routine-calendar.css?v=20260906-1">
+<link rel="stylesheet" href="/css/ui-polish.css?v=20260906-1">
+<link rel="stylesheet" href="/css/meu-caminho-modern.css?v=20260906-1">
+<link rel="stylesheet" href="/css/meu-caminho-diary.css?v=20260906-1">
+<link rel="stylesheet" href="/css/meu-caminho-navigation.css?v=20260906-1">
+<link rel="stylesheet" href="/css/meu-caminho-profile.css?v=20260906-1">
+<link rel="stylesheet" href="/css/share-card.css?v=20260906-1">
+<link rel="stylesheet" href="/css/mobile-typography.css?v=20260906-1">
+<link rel="stylesheet" href="/css/readability.css?v=20260906-1">
+<link rel="stylesheet" href="/css/visual-system.css?v=20260906-1">
+<link rel="stylesheet" href="/css/diary-recognition.css?v=20260906-1">
 </head>
 <body class="fala-bem-page fala-bem-app-page">
 <a class="fb-skip-link" href="#fala-bem-app">Pular para o Meu Caminho Be</a>
@@ -76,9 +78,10 @@
 </dialog>
 <dialog class="fb-reset-dialog" id="fb-reset-dialog" aria-labelledby="fb-reset-title">
 <span>RECOMEÇAR COM SEGURANÇA</span>
-<h2 id="fb-reset-title">Zerar todo o processo?</h2>
+<h2 id="fb-reset-title">Excluir perfil e zerar neste aparelho?</h2>
 <p>Isso apagará deste aparelho seu nome, respostas, trajetória, agenda, diário, refeições e progresso. O código de continuidade será desconectado para que os dados não voltem automaticamente.</p>
-<div><button type="button" id="fb-reset-cancel">Manter meu caminho</button><button type="button" class="fb-reset-confirm" id="fb-reset-confirm">Sim, zerar e recomeçar</button></div>
+<p><strong>A exclusão local não pode ser desfeita.</strong> Ela não apaga uma cópia já salva na nuvem nem retira seu diário público do ar. Se você usa esses recursos, exclua a cópia da nuvem e desative o diário público antes de zerar, enquanto ainda tem acesso.</p>
+<div><button type="button" id="fb-reset-cancel">Manter meu caminho</button><button type="button" class="fb-reset-confirm" id="fb-reset-confirm">Excluir e zerar neste aparelho</button></div>
 </dialog>
 <dialog class="fb-account-dialog" id="fb-account-dialog" aria-labelledby="fb-account-dialog-title">
 <button type="button" class="fb-account-dialog-close" id="fb-account-close" aria-label="Fechar">×</button>
@@ -211,6 +214,7 @@
 <div class="be-meals-list" id="be-meals-list" aria-live="polite"></div>
 <small class="be-meals-note">Café da manhã, almoço e jantar podem ser incluídos uma vez por dia. Lanches extras continuam disponíveis.</small>
 </section>
+<section class="be-recognition-card" data-diary-recognition hidden aria-label="Seu último momento no diário"><small>UMA MENSAGEM DA BIBLIOTECA BeM</small><h3 data-recognition-title></h3><p data-recognition-message></p><p data-recognition-detail></p><span class="be-recognition-summary" data-recognition-summary></span><p class="be-recognition-return">Bom ter você por aqui. Registre um novo momento ou releia o que já viveu.</p></section>
 <section class="be-diary-welcome">
 <div><span class="be-diary-eyebrow" id="be-diary-date-label">MEU CAMINHO BE · HOJE</span><h2 id="be-diary-home-title">O que você fez hoje?</h2><p>Registre em segundos. Nós organizamos sua história.</p></div>
 <div class="be-diary-today-count"><strong id="be-today-count">0</strong><span>atividades hoje</span></div>
@@ -695,8 +699,9 @@
 <div class="fb-app-panel be-register-panel" data-fb-panel="registrar" hidden>
 <main class="be-register-page" aria-labelledby="be-register-page-title">
 <header><span>REGISTRAR</span><h2 id="be-register-page-title">Registre uma atividade.</h2><p>Conte o que fez. Nós organizamos sua evolução.</p></header>
+<section class="be-recognition-card" data-diary-recognition hidden aria-label="Seu último momento no diário"><small>UMA MENSAGEM DA BIBLIOTECA BeM</small><h3 data-recognition-title></h3><p data-recognition-message></p><p data-recognition-detail></p><span class="be-recognition-summary" data-recognition-summary></span><p class="be-recognition-return">Seu próximo capítulo pode ser pequeno. Quando quiser voltar, seu diário continua daqui.</p></section>
 <section class="be-register-invitation"><div><span aria-hidden="true">＋</span><div><strong>Novo registro</strong><p>Informe a atividade, conte como foi e, se quiser, inclua uma foto.</p></div></div><button type="button" data-be-new-entry>Registrar minha atividade</button></section>
-<ol class="be-register-guide" aria-label="Como funciona o registro"><li><span>1</span><div><strong>Conte o que fez</strong><p>Escolha a atividade e a data.</p></div></li><li><span>2</span><div><strong>Guarde o momento</strong><p>Adicione seu texto e, se quiser, uma foto.</p></div></li><li><span>3</span><div><strong>Escolha a privacidade</strong><p>Mantenha no diário ou publique na sua página.</p></div></li></ol>
+<ol class="be-register-guide" aria-label="Como funciona o registro"><li><span>1</span><div><strong>Registre o que viveu</strong><p>Atividade e tempo são suficientes para começar.</p></div></li><li><span>2</span><div><strong>Receba uma mensagem</strong><p>A Biblioteca BeM reconhece o seu momento.</p></div></li><li><span>3</span><div><strong>Volte do seu jeito</strong><p>Releia sua história e registre o próximo capítulo, no seu ritmo.</p></div></li></ol>
 <aside><strong>Privado é sempre o padrão.</strong><p>Só os registros que você marcar como públicos aparecerão imediatamente no seu diário compartilhado.</p></aside>
 </main>
 </div>
@@ -723,7 +728,7 @@
 <div class="be-sports-profile-photo"><div class="be-profile-presentation-avatar"><img id="be-profile-card-photo" alt="Foto do perfil esportivo" hidden><span id="be-profile-card-fallback" aria-hidden="true">BE</span></div></div>
 <div class="be-profile-presentation-identity"><span>PERFIL BE</span><h2 id="be-profile-display-name" tabindex="-1">Seu perfil esportivo</h2><p id="be-profile-display-handle">@meucaminhobe</p><div id="be-profile-display-tags" class="be-profile-display-tags"></div><p class="be-profile-presentation-bio" id="be-profile-display-bio">O esporte faz parte da minha história.</p></div>
 <div class="be-sports-profile-header-stats" aria-label="Resumo do perfil"><div><strong id="be-profile-stat-records">0</strong><span>atividades</span></div><div><strong id="be-profile-stat-achievements">0</strong><span>conquistas</span></div></div>
-<div class="be-sports-profile-actions"><button type="button" class="be-sports-primary-action" data-be-new-entry>＋ Registrar atividade</button><button type="button" id="be-profile-edit" class="be-profile-edit-action">Editar perfil</button><button type="button" id="be-profile-share" class="be-profile-share-action">Compartilhar perfil</button></div>
+<div class="be-sports-profile-actions"><button type="button" class="be-sports-primary-action" data-be-new-entry>＋ Registrar atividade</button><button type="button" id="be-profile-edit" class="be-profile-edit-action">Editar perfil</button><button type="button" id="be-profile-share" class="be-profile-share-action">Compartilhar perfil</button><button type="button" class="be-profile-delete-action" data-fb-reset>Excluir perfil / zerar</button></div>
 <span class="be-profile-legacy-stat" hidden><b id="be-profile-stat-days">0</b><b id="be-profile-stat-sports">1</b><b id="be-profile-stat-since">Hoje</b></span>
 </header>
 <section class="be-profile-evolution-summary" aria-labelledby="be-profile-evolution-summary-title"><header><span>SUA EVOLUÇÃO</span><h3 id="be-profile-evolution-summary-title">O que sua história já mostra</h3></header><div><article><span>ATIVIDADES</span><strong id="be-profile-metric-activities">0</strong><small>registros esportivos</small></article><article><span>TEMPO EM MOVIMENTO</span><strong id="be-profile-metric-time">0 min</strong><small>tempo acumulado</small></article><article><span>DISTÂNCIA</span><strong id="be-profile-metric-distance">0 km</strong><small>quando informada</small></article><article><span>SEQUÊNCIA ATUAL</span><strong id="be-profile-metric-streak">0 dias</strong><small>dias consecutivos</small></article></div></section>
@@ -808,6 +813,7 @@
 <button type="button" data-fb-view="especialistas">Ver profissionais</button>
 <button type="button" data-fb-view="ferramentas">Abrir ferramentas</button>
 </nav>
+<section class="fb-profile-reset be-profile-data-control" aria-labelledby="be-profile-data-control-title"><div><h3 id="be-profile-data-control-title">Excluir perfil e zerar</h3><p>Apaga deste aparelho seu perfil, registros, agenda e progresso para começar de novo. Você confirma antes de apagar.</p><small>A cópia da nuvem e o diário público são gerenciados separadamente.</small></div><button type="button" data-fb-reset>Excluir perfil e zerar</button></section>
 <details class="be-profile-management">
 <summary><span>Configurações, privacidade e dados<small>Histórico, continuidade, backup e controle do perfil</small></span></summary>
 <div class="be-profile-management-body">
@@ -826,7 +832,7 @@
 <div class="fb-account-actions"><button type="button" class="fb-primary-action" id="fb-account-connect" hidden>Ativar continuidade</button><button type="button" id="fb-account-show-code" hidden>Ver meu código</button><button type="button" id="fb-account-sync-now" hidden>Sincronizar agora</button><button type="button" id="fb-account-logout" hidden>Desconectar código</button><button type="button" class="fb-account-danger" id="fb-account-cloud-delete" hidden>Excluir cópia da nuvem</button></div>
 </section>
 <div class="fb-profile-data"><strong>Seus dados, sob seu controle</strong><span>Baixe uma cópia ou restaure seu caminho neste navegador.</span><div><button type="button" id="fb-export-profile">Exportar meus dados</button><label for="fb-import-profile">Importar backup<input type="file" id="fb-import-profile" accept="application/json,.json" hidden></label></div><small>O arquivo pode conter informações pessoais e relatos da sua jornada. A importação substitui os dados atuais somente depois da sua confirmação.</small></div>
-<div class="fb-profile-reset"><strong>Quer começar novamente?</strong><span>Apague os dados locais e refaça sua trajetória desde o nome.</span><button type="button" data-fb-reset>Zerar meu processo</button></div>
+
 </div>
 </details>
 </div>
@@ -1531,25 +1537,29 @@ Seu navegador não consegue reproduzir este vídeo.
 </form>
 </dialog>
 
+<dialog class="be-recognition-dialog" id="be-recognition-dialog" aria-labelledby="be-recognition-heading"><div class="be-recognition-content"><span class="be-recognition-check" aria-hidden="true">✓</span><h2 id="be-recognition-heading">Momento guardado.</h2><small>UMA MENSAGEM DA BIBLIOTECA BeM</small><h3 data-recognition-title></h3><p data-recognition-message></p><p data-recognition-detail></p><span class="be-recognition-summary" data-recognition-summary></span><p class="be-recognition-return">Você não precisa fazer mais nada agora. Seu registro fica no diário para quando quiser voltar.</p><div class="be-recognition-actions"><button type="button" id="be-recognition-done" autofocus>Continuar meu dia</button><button type="button" id="be-recognition-share">Criar um card para compartilhar</button></div></div></dialog>
+
 <dialog class="be-entry-dialog" id="be-entry-dialog" aria-labelledby="be-entry-dialog-title">
 <form id="be-entry-form" method="dialog">
 <header><div><span>REGISTRAR · MEU CAMINHO BE</span><h2 id="be-entry-dialog-title">Registrar atividade</h2><p id="be-entry-dialog-description">Conte o que aconteceu de verdade. Você poderá corrigir depois.</p></div><button type="button" id="be-entry-close" aria-label="Fechar">×</button></header>
-<ol class="be-entry-progress" aria-label="Etapas do registro"><li class="active"><span>1</span>Como estou</li><li><span>2</span>Atividade</li><li><span>3</span>Detalhes</li><li><span>4</span>Salvar</li></ol>
+<p class="be-entry-simple-help">Escolha a atividade e o tempo. O nome, a foto e os outros detalhes são opcionais.</p>
 <input type="hidden" id="be-entry-id" name="id">
 <div class="be-form-grid">
 <label for="be-entry-date">Quando?<input type="date" id="be-entry-date" name="date" required></label>
 <label for="be-entry-type">O que você fez?<select id="be-entry-type" name="type" required><option value="corrida">Corrida</option><option value="treino">Treino / academia</option><option value="jogo">Jogo / esporte com bola</option><option value="caminhada">Caminhada</option><option value="ciclismo">Ciclismo</option><option value="natacao">Natação</option><option value="outro">Outro esporte</option></select></label>
 </div>
-<label for="be-entry-title">Nome da atividade<input type="text" id="be-entry-title" name="title" maxlength="60" placeholder="Ex.: Beach tennis, treino de força"></label>
-<div class="be-form-grid be-entry-numbers"><label for="be-entry-duration">Por quanto tempo?<span><input type="number" id="be-entry-duration" name="duration" min="1" max="1440" inputmode="numeric" placeholder="45" required><small>min</small></span></label><label for="be-entry-distance">Distância <em>(opcional)</em><span><input type="number" id="be-entry-distance" name="distance" min="0" max="10000" step="0.01" inputmode="decimal" placeholder="5"><small>km</small></span></label></div>
-<label for="be-entry-result">Resultado ou marca <em>(opcional)</em><input type="text" id="be-entry-result" name="result" maxlength="60" placeholder="Ex.: 2 × 1, 10 repetições, novo percurso"></label>
+<label for="be-entry-title">Nome da atividade <em>(opcional)</em><input type="text" id="be-entry-title" name="title" maxlength="60" placeholder="Ex.: Beach tennis, treino de força"></label>
+<div class="be-form-grid be-entry-numbers"><label for="be-entry-duration">Por quanto tempo?<span><input type="number" id="be-entry-duration" name="duration" min="1" max="1440" inputmode="numeric" placeholder="45" required><small>min</small></span></label></div>
+
 <fieldset class="be-feeling-field"><legend>Como você se sentiu?</legend><div><label><input type="radio" name="feeling" value="1"><span>😣</span><small>Difícil</small></label><label><input type="radio" name="feeling" value="2"><span>😕</span><small>Cansado</small></label><label><input type="radio" name="feeling" value="3" checked><span>🙂</span><small>Bem</small></label><label><input type="radio" name="feeling" value="4"><span>😄</span><small>Ótimo</small></label><label><input type="radio" name="feeling" value="5"><span>🔥</span><small>Incrível</small></label></div></fieldset>
+<details class="be-entry-optional-details" id="be-entry-optional-details"><summary>Adicionar detalhes ou foto (opcional)</summary><div class="be-form-grid"><label for="be-entry-distance">Distância <em>(opcional)</em><span><input type="number" id="be-entry-distance" name="distance" min="0" max="10000" step="0.01" inputmode="decimal" placeholder="5"><small>km</small></span></label><label for="be-entry-result">Resultado ou marca <em>(opcional)</em><input type="text" id="be-entry-result" name="result" maxlength="60" placeholder="Ex.: 2 × 1, 10 repetições, novo percurso"></label></div>
 <label for="be-entry-note">Como foi e o que aconteceu? <em>(obrigatório ao compartilhar)</em><textarea id="be-entry-note" name="note" maxlength="600" rows="4" placeholder="Conte como foi o treino, o momento ou o que vale lembrar."></textarea></label>
 <section class="be-entry-media" aria-labelledby="be-entry-media-title">
 <div><span>FOTO DO REGISTRO</span><h3 id="be-entry-media-title">Inclua uma foto</h3><p>A foto é ajustada apenas no tamanho, sem mudar as pessoas ou o conteúdo.</p></div>
 <div class="be-entry-media-actions"><label for="be-entry-photo">Escolher foto<input type="file" id="be-entry-photo" accept="image/jpeg,image/png,image/webp" hidden></label><button type="button" id="be-entry-photo-remove" hidden>Remover foto</button></div>
 <figure class="be-entry-photo-preview" id="be-entry-photo-preview" hidden><img id="be-entry-photo-preview-image" alt="Prévia da foto do registro"><figcaption>A foto será guardada com este registro.</figcaption></figure>
 </section>
+</details>
 <fieldset class="be-entry-visibility"><legend>Onde deseja guardar?</legend><div><label><input type="radio" name="visibility" value="private" checked><span><strong>Só no meu diário</strong><small>Privado e disponível apenas neste aparelho.</small></span></label><label hidden><input type="radio" name="visibility" value="public" disabled><span><strong>Compartilhar com todos</strong><small>Publicações temporariamente pausadas.</small></span></label></div><p id="be-entry-public-help">Registros são privados por padrão. Somente publicações escolhidas no Meu Diário BE podem ficar públicas.</p></fieldset>
 <p class="be-form-feedback" id="be-entry-feedback" role="alert" aria-live="assertive"></p>
 <footer><button type="button" id="be-entry-delete" class="be-delete-entry" hidden>Excluir</button><span></span><button type="button" id="be-entry-cancel">Cancelar</button><button type="submit" class="be-save-entry">Registrar no diário</button></footer>
@@ -1561,10 +1571,10 @@ Seu navegador não consegue reproduzir este vídeo.
 <script type="module" src="/js/meu-caminho-account.js?v=20260823-2"></script>
 <script src="/js/coluna-valtinho.js?v=20260823-1" defer></script>
 <script src="/js/be-knowledge-library.js?v=20260821-4" defer></script>
-<script src="/js/meu-caminho-navigation.js?v=20260823-2" defer></script>
-<script src="/js/fala-bem-app.js?v=20260905-1" defer></script>
+<script src="/js/meu-caminho-navigation.js?v=20260906-2" defer></script>
+<script src="/js/fala-bem-app.js?v=20260906-2" defer></script>
 <script src="/js/be-ia.js?v=20260806-1" defer></script>
-<script src="/js/meu-caminho-diary.js?v=20260905-1" defer></script>
+<script src="/js/meu-caminho-diary.js?v=20260906-2" defer></script>
 <script src="/js/meu-caminho-public.js?v=20260902-2" defer></script>
 <script src="/js/be-share-card.js?v=20260903-1" defer></script>
 <script src="/js/meu-caminho-profile.js?v=20260826-2" defer></script>

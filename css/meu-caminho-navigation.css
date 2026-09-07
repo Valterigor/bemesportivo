@@ -15,7 +15,7 @@ body.fala-bem-app-page .fb-map-gate-note {
   padding: 10px;
   border-radius: 10px;
   background: #fff3ec;
-  color: #7a3a1e;
+  color: #724006;
   font-size: 10px;
   font-weight: 750;
   line-height: 1.4;
@@ -177,7 +177,7 @@ body.fala-bem-app-page .fb-map-gate-note[hidden] {
     padding: 3px 7px;
     border-radius: 999px;
     background: #fff0e8;
-    color: #a44720;
+    color: #945308;
     content: "Abrir";
     font-size: 8px;
     font-weight: 900;
@@ -195,7 +195,7 @@ body.fala-bem-app-page .fb-map-gate-note[hidden] {
     padding: 3px 6px;
     border-radius: 999px;
     background: #fff0e8;
-    color: #a44720;
+    color: #945308;
     content: "Mapa";
     font-size: 8px;
     font-weight: 900;
@@ -247,7 +247,7 @@ body.fala-bem-app-page .fb-mobile-drawer [data-fb-view][data-fb-gated="true"]::a
   padding: 4px 7px;
   border-radius: 999px;
   background: #fff0e8;
-  color: #a44720;
+  color: #945308;
   content: "Concluir Mapa";
   font-size: 8px;
   font-weight: 900;

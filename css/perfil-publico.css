@@ -1,6 +1,6 @@
 :root {
-  --be-public-orange: #ff5a1f;
-  --be-public-orange-dark: #c94312;
+  --be-public-orange: #da790b;
+  --be-public-orange-dark: #a95e09;
   --be-public-ink: #1c1917;
   --be-public-muted: #6d655f;
   --be-public-line: #e8e0da;
@@ -15,7 +15,7 @@ body.be-public-page {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 8% 18%, rgba(255, 90, 31, .07), transparent 24rem),
+    radial-gradient(circle at 8% 18%, rgba(218, 121, 11, .07), transparent 24rem),
     linear-gradient(180deg, #fbfaf9 0, #f5f1ed 44rem, #f8f6f4 100%) !important;
   color: var(--be-public-ink);
   font-family: Rubik, Inter, Arial, sans-serif;
@@ -24,17 +24,17 @@ body.be-public-page {
 .be-public-post-copy h3 { margin: 8px 0 0; color: #000; font-size: clamp(19px,3vw,26px); line-height: 1.12; }
 .be-public-sports-data { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
 .be-public-sports-data span { padding: 8px 10px; border-radius: 9px; background: #f5f3f1; color: #28231f; font-size: 11px; font-weight: 700; }
-.be-public-personal-best { display: inline-flex; margin-top: 13px; padding: 9px 11px; border-left: 3px solid #fa8a01; background: #fff7e9; color: #743e00; font-size: 11px; }
+.be-public-personal-best { display: inline-flex; margin-top: 13px; padding: 9px 11px; border-left: 3px solid #f38e1b; background: #fff7e9; color: #723f06; font-size: 11px; }
 .be-public-interactions { display: flex; gap: 8px; margin-top: 18px; padding-top: 12px; border-top: 1px solid #eee9e5; }
 .be-public-interactions button { min-height: 42px; padding: 0 13px; border: 0; border-radius: 10px; background: transparent; color: #27221f; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
-.be-public-interactions button:hover,.be-public-interactions button:focus-visible,.be-public-interactions button[aria-pressed="true"] { background: #fff1e5; color: #a84618; }
+.be-public-interactions button:hover,.be-public-interactions button:focus-visible,.be-public-interactions button[aria-pressed="true"] { background: #fff1e5; color: #965408; }
 .be-public-comments { margin-top: 8px; padding: 12px; border-radius: 12px; background: #faf8f6; }
 .be-public-comments[hidden] { display: none; }
 .be-public-comments > p { margin: 0 0 8px; font-size: 12px; line-height: 1.45; }
 .be-public-comments > p strong { color: #000; }
 .be-public-comments form { display: grid; grid-template-columns: minmax(100px,.45fr) minmax(0,1fr) auto; gap: 7px; margin-top: 10px; }
 .be-public-comments input { min-width: 0; min-height: 42px; padding: 0 11px; border: 1px solid #ddd5cf; border-radius: 9px; background: #fff; font: inherit; font-size: 12px; }
-.be-public-comments button { min-height: 42px; padding: 0 14px; border: 0; border-radius: 9px; background: #fa8a01; color: #000; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
+.be-public-comments button { min-height: 42px; padding: 0 14px; border: 0; border-radius: 9px; background: #f38e1b; color: #000; font: inherit; font-size: 11px; font-weight: 800; cursor: pointer; }
 .be-public-comments small { grid-column: 1 / -1; min-height: 14px; color: #7c5543; font-size: 10px; }
 .be-public-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; opacity: 0 !important; }
 
@@ -70,8 +70,8 @@ body.be-public-page > main.be-public-profile {
   height: 68px;
   place-items: center;
   border-radius: 22px;
-  background: linear-gradient(145deg, #ff743e, var(--be-public-orange));
-  box-shadow: 0 14px 30px rgba(255, 90, 31, .24);
+  background: linear-gradient(145deg, #eb830c, var(--be-public-orange));
+  box-shadow: 0 14px 30px rgba(218, 121, 11, .24);
   color: #fff;
   font-size: 24px;
   font-weight: 900;
@@ -102,7 +102,7 @@ body.be-public-page > main.be-public-profile {
   padding: clamp(28px, 5vw, 46px);
   background:
     radial-gradient(circle at 82% 24%, rgba(255, 255, 255, .18), transparent 12rem),
-    linear-gradient(120deg, #181411 0%, #3f251c 56%, #d84a18 100%);
+    linear-gradient(120deg, #181411 0%, #422503 56%, #b7660a 100%);
   color: #fff;
 }
 
@@ -152,7 +152,7 @@ body.be-public-page > main.be-public-profile {
   place-items: center;
   border: 6px solid #fff;
   border-radius: 50%;
-  background: linear-gradient(145deg, #ff8955, var(--be-public-orange));
+  background: linear-gradient(145deg, #f39223, var(--be-public-orange));
   box-shadow: 0 12px 30px rgba(35, 29, 25, .18);
   color: #fff;
 }
@@ -310,14 +310,14 @@ body.be-public-page > main.be-public-profile {
   border: 1px solid #f0b99e;
   border-radius: 10px;
   background: #fff7f2;
-  color: #9c3d18;
+  color: #884c07;
   font: 800 10px Inter, Arial, sans-serif;
   cursor: pointer;
   transition: background .18s ease, border-color .18s ease;
 }
 
 .be-public-share-post:hover,
-.be-public-share-post:focus-visible { border-color: #e98454; background: #fff0e8; }
+.be-public-share-post:focus-visible { border-color: #ed840c; background: #fff0e8; }
 .be-public-share-post:disabled { opacity: .6; cursor: wait; }
 .be-public-share-post svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .be-public-post-share-feedback { flex-basis: 100%; min-height: 12px; color: #7a6f68; font-size: 9px; }
@@ -363,7 +363,7 @@ body.be-public-page > main.be-public-profile {
     border-radius: 10px !important;
     background: #fff8f3 !important;
     box-shadow: none !important;
-    color: #8f390f !important;
+    color: #7e4607 !important;
     font-size: 11px !important;
   }
   .be-public-hero { border-radius: 21px; }
@@ -410,8 +410,8 @@ body.be-public-page > main.be-public-profile {
 /* Perfil público compartilhável 2.0 */
 body.be-public-page {
   background:
-    radial-gradient(circle at 10% 14%, rgba(238, 93, 29, .1), transparent 26rem),
-    radial-gradient(circle at 92% 38%, rgba(255, 177, 92, .09), transparent 24rem),
+    radial-gradient(circle at 10% 14%, rgba(209, 116, 11, .1), transparent 26rem),
+    radial-gradient(circle at 92% 38%, rgba(247, 180, 104, .09), transparent 24rem),
     linear-gradient(180deg, #faf8f5 0, #f2ede8 52rem, #faf8f6 100%) !important;
 }
 
@@ -436,8 +436,8 @@ body.be-public-page > main.be-public-profile {
   padding: clamp(38px, 6vw, 68px);
   background:
     radial-gradient(circle at 83% 18%, rgba(255, 255, 255, .16), transparent 15rem),
-    radial-gradient(circle at 72% 105%, rgba(255, 128, 56, .32), transparent 22rem),
-    linear-gradient(125deg, #151210 0%, #2a1c17 48%, #a83b08 100%);
+    radial-gradient(circle at 72% 105%, rgba(242, 137, 17, .32), transparent 22rem),
+    linear-gradient(125deg, #151210 0%, #2a1c17 48%, #8e4f07 100%);
 }
 
 .be-public-cover::before {
@@ -463,7 +463,7 @@ body.be-public-page > main.be-public-profile {
 }
 
 .be-public-cover-copy > span {
-  color: #ff9b65;
+  color: #f5a243;
   font-size: 11px;
   font-weight: 900;
   letter-spacing: .16em;
@@ -510,7 +510,7 @@ body.be-public-page > main.be-public-profile {
   height: 150px;
   margin-top: -52px;
   border: 7px solid #fff;
-  background: linear-gradient(145deg, #ff8b4d, #d5480f);
+  background: linear-gradient(145deg, #f49325, #b46409);
   box-shadow: 0 18px 42px rgba(35, 24, 18, .22);
 }
 
@@ -519,7 +519,7 @@ body.be-public-page > main.be-public-profile {
 }
 
 .be-public-identity > div:last-child > span {
-  color: #a83b08;
+  color: #8e4f07;
 }
 
 .be-public-identity h1 {
@@ -558,15 +558,15 @@ body.be-public-page > main.be-public-profile {
 }
 
 .be-public-profile-actions button {
-  border-color: #c94a14;
-  background: #c94a14;
+  border-color: #ad6109;
+  background: #ad6109;
   color: #fff;
-  box-shadow: 0 10px 22px rgba(169, 59, 8, .2);
+  box-shadow: 0 10px 22px rgba(143, 80, 8, .2);
 }
 
 .be-public-profile-actions :is(button, a):is(:hover, :focus-visible) {
-  border-color: #a83b08;
-  box-shadow: 0 11px 25px rgba(70, 43, 29, .13);
+  border-color: #8e4f07;
+  box-shadow: 0 11px 25px rgba(75, 42, 4, .13);
   transform: translateY(-1px);
 }
 
@@ -588,7 +588,7 @@ body.be-public-page > main.be-public-profile {
 }
 
 .be-public-bio::before {
-  color: #d6531b;
+  color: #bb680a;
   content: "“";
   font: 900 30px/0 Manrope, Inter, sans-serif;
   vertical-align: -7px;

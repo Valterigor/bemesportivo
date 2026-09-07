@@ -177,7 +177,7 @@
   }
 
   :where(.home-page, .reportagens-page, .beplay-page, .professionals-page) :where(.story-card, .social-card, .report-preview, .card, .related-item):hover {
-    border-color: rgb(250 138 1 / 22%) !important;
+    border-color: rgb(243 142 27 / 22%) !important;
     box-shadow: 0 2px 4px rgb(17 17 17 / 3%), 0 16px 40px rgb(17 17 17 / 8%) !important;
     transform: translateY(-2px) !important;
   }
