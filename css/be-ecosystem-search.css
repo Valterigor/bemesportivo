@@ -470,6 +470,35 @@
 }
 
 @media (max-width: 640px) {
-  .be-search-result-card[href="/meu-caminho-be/registrar"] { grid-template-columns: 1fr; }
-  .be-search-result-card[href="/meu-caminho-be/registrar"] .be-search-result-media { height: auto; min-height: 0; aspect-ratio: 1200 / 554; }
+  .be-search-result-card {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: 18px;
+  }
+  .be-search-result-media {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+  .be-search-result-card[href="/meu-caminho-be/registrar"] .be-search-result-media { aspect-ratio: 1200 / 554; }
+  .be-search-result-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    padding: 16px;
+    gap: 8px;
+  }
+  .be-search-result-body > small { align-self: flex-start; }
+  .be-search-result-body > strong {
+    font-size: 1.125rem;
+    line-height: 1.3;
+  }
+  .be-search-result-body > span {
+    font-size: .9375rem;
+    line-height: 1.55;
+  }
+  .be-search-result-body > b {
+    margin-top: 4px;
+    padding-top: 4px;
+  }
 }

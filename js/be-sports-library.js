@@ -7,8 +7,8 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function createBeSportsLibrary() {
   'use strict';
 
-  const VERSION = '1.3.0';
-  const REVIEWED_AT = '2026-08-29';
+  const VERSION = '1.4.0';
+  const REVIEWED_AT = '2026-09-07';
   const REVIEW_STATUS = 'editorial-educational';
 
   const sports = Object.freeze([
@@ -205,6 +205,9 @@
   const sources = Object.freeze({
     acsmResistance: 'https://pubmed.ncbi.nlm.nih.gov/41843416/',
     cdcWeight: 'https://www.cdc.gov/healthy-weight-growth/losing-weight/index.html',
+    brazilActivityGuide: 'https://bvsms.saude.gov.br/bvs/publicacoes/guia_atividade_fisica_populacao_brasileira.pdf',
+    medlineSportsInjuries: 'https://medlineplus.gov/sportsinjuries.html',
+    medlineExerciseInjuries: 'https://medlineplus.gov/ency/patientinstructions/000859.htm',
     nihSupplements: 'https://ods.od.nih.gov/factsheets/ExerciseAndAthleticPerformance-Consumer/',
     whoActivity: 'https://www.who.int/publications/i/item/9789240015128'
   });
@@ -414,6 +417,34 @@
       sourceIds: ['cdcWeight', 'acsmResistance']
     },
     {
+      id: 'sports-injury', label: 'dor e lesão esportiva', kind: 'health', tool: null,
+      aliases: ['quero curar uma lesao', 'curar uma lesao', 'tratar uma lesao', 'estou lesionado', 'estou lesionada', 'me machuquei treinando', 'me machuquei no esporte', 'tive uma lesao', 'lesao no treino', 'dor depois do treino', 'dor durante o treino', 'entorse', 'distensao muscular'],
+      title: 'Lesão precisa de avaliação antes da volta ao esporte',
+      summary: 'Uma busca não consegue identificar nem curar uma lesão. 1. Pare a atividade que causou ou piora a dor. 2. Observe onde dói, como começou, inchaço, perda de força e dificuldade para apoiar ou movimentar. 3. Procure avaliação de um profissional de saúde para definir o diagnóstico e o tratamento. Vá a um serviço de urgência se houver deformidade, suspeita de fratura, articulação fora do lugar, dor muito forte, sangramento importante, estalo seguido de incapacidade para usar a região, dor no peito ou falta de ar. Não volte ao treino apenas porque a dor diminuiu.',
+      sourceIds: ['brazilActivityGuide', 'medlineSportsInjuries', 'medlineExerciseInjuries']
+    },
+    {
+      id: 'return-after-injury', label: 'retorno após lesão', kind: 'health', tool: null,
+      aliases: ['voltar a treinar depois de lesao', 'voltar ao esporte depois de lesao', 'retomar depois de lesao', 'retorno apos lesao', 'pos lesao', 'quando voltar a treinar', 'quando posso voltar ao esporte', 'voltar depois de me machucar', 'recuperacao de lesao'],
+      title: 'O retorno após uma lesão deve acontecer por etapas',
+      summary: 'O momento da volta depende do tipo e da gravidade da lesão e da resposta ao tratamento. 1. Siga a liberação e o plano do profissional que avaliou você. 2. Recupere primeiro os movimentos e tarefas do dia a dia sem piora dos sintomas. 3. Retome com duração, carga e complexidade menores do que antes. 4. Aumente uma variável por vez e observe a resposta durante e após a atividade. Dor crescente, novo inchaço, perda de força ou limitação pedem interrupção e nova avaliação.',
+      sourceIds: ['medlineSportsInjuries', 'medlineExerciseInjuries']
+    },
+    {
+      id: 'start-active-life', label: 'começar uma vida mais ativa', kind: 'training', tool: null,
+      aliases: ['quero deixar de ser sedentario', 'deixar de ser sedentario', 'sair do sedentarismo', 'parar de ser sedentario', 'sou sedentario', 'sou sedentaria', 'estou sedentario', 'estou sedentaria', 'nunca fiz atividade fisica', 'estou muito parado', 'estou muito parada', 'comecar uma vida ativa', 'quero me movimentar mais'],
+      title: 'Um começo pequeno já tira o corpo da inatividade',
+      summary: 'Você não precisa começar com treino intenso. 1. Escolha uma atividade simples e acessível, como caminhar, pedalar leve, dançar ou fazer tarefas ativas. 2. Comece com poucos minutos em ritmo confortável e repita em dias possíveis. 3. Aumente primeiro a frequência ou a duração; deixe a intensidade para depois. 4. Registre cada prática para enxergar a constância. Algum movimento é melhor do que nenhum. Se houver lesão, condição de saúde ou desconforto anormal, procure orientação antes de avançar.',
+      sourceIds: ['brazilActivityGuide', 'whoActivity']
+    },
+    {
+      id: 'reduce-sedentary-time', label: 'reduzir o tempo sentado', kind: 'training', tool: null,
+      aliases: ['fico sentado o dia todo', 'passo o dia sentado', 'reduzir tempo sentado', 'diminuir o sedentarismo', 'pausa ativa', 'como me movimentar no trabalho', 'atividade fisica no trabalho', 'levantar mais durante o dia'],
+      title: 'Quebre o tempo sentado ao longo do dia',
+      summary: 'Além de reservar um momento para atividade física, interrompa períodos longos sentado. 1. Use um lembrete para levantar e mudar de posição regularmente. 2. Caminhe para beber água, falar com alguém ou realizar pequenas tarefas. 3. Prefira escadas e deslocamentos a pé quando forem seguros e possíveis. 4. Some esses movimentos a uma atividade de que você goste. O Guia brasileiro sugere, sempre que possível, movimentar-se por pelo menos cinco minutos a cada hora sedentária.',
+      sourceIds: ['brazilActivityGuide', 'whoActivity']
+    },
+    {
       id: 'plateau-results', label: 'estagnação e resultados', kind: 'training', tool: null,
       aliases: ['nao estou ganhando massa muscular', 'meu braco nao cresce', 'meu gluteo nao cresce', 'treino nao esta dando resultado', 'treinando e nao vejo resultado', 'parei de evoluir', 'tempo leva para ganhar musculo', 'tempo demora para aparecer resultado'],
       title: 'Quando o resultado parece ter parado',
@@ -455,7 +486,11 @@
     corrida: ['running', 'performance'],
     casa: ['home-training', 'calisthenics'],
     flexibilidade: ['mobility-yoga'],
-    mobilidade: ['mobility-yoga']
+    mobilidade: ['mobility-yoga'],
+    lesao: ['sports-injury', 'return-after-injury'],
+    machucado: ['sports-injury', 'return-after-injury'],
+    sedentario: ['start-active-life', 'reduce-sedentary-time'],
+    sentado: ['reduce-sedentary-time', 'start-active-life']
   });
 
   const relatedStopWords = new Set([

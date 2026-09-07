@@ -177,6 +177,13 @@
       href: '/meu-caminho-be/jornada', image: EDITORIAL_IMAGES.journey,
       action: 'Ver minha jornada', keywords: [topic.id]
     }];
+    if (topic.kind === 'health') items.push({
+      product: 'profissionais', sourceLabel: 'Orientação relacionada',
+      title: 'Encontre apoio profissional',
+      summary: 'Conheça os profissionais apresentados pelo Bem Esportivo e confirme diretamente formação, experiência e atendimento adequados à sua necessidade.',
+      href: '/profissionais', image: EDITORIAL_IMAGES.professional,
+      action: 'Ver profissionais', keywords: [topic.id]
+    });
     if (topic.tool === 'pace') items.push({
       product: 'ferramentas', sourceLabel: 'Ferramenta relacionada',
       title: 'Calculadora Pace', summary: 'Calcule seu ritmo por quilômetro como referência educativa.',

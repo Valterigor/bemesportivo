@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 const library = require('../../js/be-sports-library.js');
 const search = require('../../js/be-ecosystem-search.js');
 
-assert.equal(library.version, '1.3.0');
+assert.equal(library.version, '1.4.0');
 assert.ok(library.sports.length >= 28, 'A biblioteca deve cobrir ao menos 28 modalidades.');
 assert.ok(library.topics.length >= 30, 'A biblioteca deve cobrir os principais objetivos esportivos.');
 assert.equal(new Set(library.sports.map((sport) => sport.id)).size, library.sports.length, 'IDs de modalidades devem ser únicos.');
@@ -38,6 +38,10 @@ const topicQueries = new Map([
   ['Creatina faz mal?', 'supplements'],
   ['Como melhorar minha performance?', 'performance'],
   ['Quantos dias devo descansar?', 'recovery'],
+  ['Quero curar uma lesão', 'sports-injury'],
+  ['Quero voltar a treinar depois de lesão', 'return-after-injury'],
+  ['Quero deixar de ser sedentário', 'start-active-life'],
+  ['Passo o dia sentado', 'reduce-sedentary-time'],
   ['Por que parei de evoluir?', 'plateau-results']
 ]);
 
@@ -63,6 +67,8 @@ bodyPartTopicIds.forEach((topicId) => {
 assert.doesNotMatch(library.findTopic('Como emagrecer rápido?').summary, /garant|em \d+ dias|kg por semana/i);
 assert.match(library.findTopic('Como perder barriga?').summary, /não existe exercício.+apenas da barriga/i);
 assert.match(library.findTopic('Quanto de whey tomar?').summary, /profissional de saúde/i);
+assert.match(library.findTopic('Quero curar uma lesão').summary, /não consegue identificar nem curar/i);
+assert.match(library.findTopic('Quero deixar de ser sedentário').summary, /começar com treino intenso/i);
 
 const relatedStrengthTopics = library.findRelatedTopics('O que é bom pra tomar pra dar força?', 3).map((topic) => topic.id);
 assert.ok(relatedStrengthTopics.includes('strength-progression'));
