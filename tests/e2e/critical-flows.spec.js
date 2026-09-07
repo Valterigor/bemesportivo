@@ -171,10 +171,11 @@ test('primeiro acesso começa pelo Perfil Be antes de liberar a jornada', async 
   await searchDestination.click();
   await expect(page).toHaveURL(/\/meu-caminho-be\/registrar$/);
   await expect(page.locator('#fala-bem-app')).toHaveClass(/fb-onboarding-active/);
-  await expect(page.getByRole('heading', { name: 'Crie seu Perfil Be.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Prepare seu primeiro passo.' })).toBeVisible();
   await expect(page.locator('.fb-app-nav')).toBeVisible();
   await expect(page.locator('.fb-app-nav [data-fb-view="perfil"]')).toHaveAttribute('aria-current', 'page');
-  await expect(page.locator('.fb-app-nav [data-fb-view="inicio"]')).not.toHaveClass(/is-active/);
+  await expect(page.locator('.be-profile-story-section')).toBeHidden();
+  await expect(page.locator('.be-profile-optional-fields')).toBeHidden();
   await expect(page.locator('#fb-profile-name')).toBeVisible();
   await expect(page.locator('#fb-profile-email')).toHaveCount(0);
   await page.locator('#fb-profile-name').fill('Pessoa Teste');

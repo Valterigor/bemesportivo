@@ -489,8 +489,8 @@ async function run() {
     assert.match(pathHtml, /data-fb-panel="ferramentas"[\s\S]*id="fb-tools-mount"/, 'Ferramentas precisa ficar dentro de um painel próprio do aplicativo.');
     assert.match(pathHtml, /aria-label="Próximos passos após usar uma ferramenta"[\s\S]*?data-fb-view="dicas">Dicas práticas<\/button>[\s\S]*?data-fb-view="especialistas">Ver profissionais<\/button>/, 'O primeiro próximo passo de Ferramentas precisa abrir somente Dicas práticas.');
     assert.match(pathHtml, /class="be-journey-switcher"[\s\S]*?data-fb-view="progresso"[\s\S]*?data-fb-view="evolucao"[\s\S]*?data-fb-view="explorar"/, 'Diário, Evolução e História precisam permanecer dentro da Jornada.');
-    assert.match(pathHtml, /id="be-profile-onboarding"[\s\S]*Perfil Be[\s\S]*Meu Hoje[\s\S]*Próximo passo/, 'O primeiro acesso precisa explicar a sequência antes de coletar os dados do Perfil Be.');
-    assert.match(pathHtml, /<h2 id="be-profile-onboarding-title">Crie seu Perfil Be\.<\/h2>[\s\S]*Leva poucos minutos/, 'O Perfil Be precisa ser apresentado como um primeiro passo direto e breve.');
+    assert.match(pathHtml, /id="be-profile-onboarding"[\s\S]*Seu momento[\s\S]*Primeiro registro/, 'O primeiro acesso precisa explicar os dois passos antes de coletar os dados essenciais.');
+    assert.match(pathHtml, /<h2 id="be-profile-onboarding-title">Prepare seu primeiro passo\.<\/h2>[\s\S]*completado depois/, 'O Meu Caminho precisa apresentar uma entrada direta e deixar o perfil completo para depois.');
     assert.doesNotMatch(pathHtml, /id="journey-name"/, 'O Mapa BeM não deve perguntar novamente o nome já salvo no Perfil Be.');
     assert.match(pathHtml, /data-step-indicator="1"[^>]*>[\s\S]*Perfil Be/, 'O Mapa BeM precisa reconhecer o Perfil Be como etapa concluída.');
     assert.equal((pathHtml.match(/class="fb-section-actions(?:\s[^"]*)?"/g) || []).length, 6, 'As seis áreas principais precisam oferecer próximos passos contextuais.');
@@ -566,7 +566,7 @@ async function run() {
       assert.match(pathHtml, new RegExp(`id="${id}"`), `Banner interno ausente: ${id}`);
     }
     assert.match(pathHtml, /class="be-profile-social-card"[\s\S]*class="be-profile-cover"[\s\S]*class="be-profile-social-identity"/, 'O Perfil precisa apresentar uma identidade social antes do cadastro.');
-    assert.match(pathHtml, /class="be-profile-form-section"[\s\S]*Como podemos chamar você\?[\s\S]*IDENTIDADE ESPORTIVA/, 'O acesso local e o perfil esportivo precisam estar organizados em blocos compreensíveis.');
+    assert.match(pathHtml, /class="be-profile-form-section"[\s\S]*Como podemos chamar você\?[\s\S]*2 · SEU MOVIMENTO/, 'O acesso local e a escolha do primeiro movimento precisam estar organizados em blocos compreensíveis.');
     assert.doesNotMatch(pathHtml, /be-auth-(?:login|signup|recovery|update)-(?:form|email|password)/, 'O Meu Caminho Be não deve oferecer autenticação por e-mail ou senha.');
     assert.doesNotMatch(pathHtml, /meu-caminho-auth\.(?:css|js)/, 'O módulo antigo de autenticação por e-mail não deve ser carregado.');
     assert.match(pathHtml, /REGISTRAR · MEU CAMINHO BE[\s\S]*id="be-entry-dialog-description"/, 'O registro precisa ter banner e explicação próprios.');

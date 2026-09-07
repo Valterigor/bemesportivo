@@ -470,6 +470,22 @@
 }
 
 @media (max-width: 640px) {
+  .be-search-discovery:not([data-search-coverage]) .be-search-results {
+    display: flex;
+    width: calc(100% + 13px);
+    margin-right: -13px;
+    padding: 1px 13px 12px 0;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .be-search-discovery:not([data-search-coverage]) .be-search-results::-webkit-scrollbar { display: none; }
+  .be-search-discovery:not([data-search-coverage]) .be-search-result-card {
+    flex: 0 0 min(82vw, 318px);
+    scroll-snap-align: start;
+  }
+  .be-search-discovery:not([data-search-coverage]) .be-search-result-card:nth-child(n+5) { display: none; }
   .be-search-result-card {
     grid-template-columns: 1fr;
     min-height: 0;

@@ -382,8 +382,8 @@
     if (!normalized) return { query: '', displayQuery: '', primary: null, related: PRODUCTS.slice(0, 4), items: [], coverage: 'empty', sport: null, intent: null };
     const sport = detectFromTaxonomy(normalized, SPORTS);
     const topic = SPORTS_LIBRARY?.findTopic?.(normalized) || null;
-    const relatedTopics = topic || sport ? [] : (SPORTS_LIBRARY?.findRelatedTopics?.(normalized, 3) || []);
     const intent = detectFromTaxonomy(normalized, INTENTS) || (sport && /\bquero\b/.test(normalized) ? INTENTS.find(entry => entry.id === 'start') : null);
+    const relatedTopics = topic || sport || intent ? [] : (SPORTS_LIBRARY?.findRelatedTopics?.(normalized, 3) || []);
     const phraseMatch = EXPLICIT_PHRASES.find(([phrase]) => normalized.includes(phrase));
     const ranked = PRODUCTS.map((product, position) => ({ product, score: product.keywords.reduce((total, keyword) => total + (normalized.includes(keyword) ? (keyword.includes(' ') ? 5 : 3) : 0), 0), position })).sort((a, b) => b.score - a.score || a.position - b.position);
     const matchedProduct = phraseMatch ? findProduct(phraseMatch[1]) : ranked[0].score > 0 ? ranked[0].product : inferPrimaryFromIntent(intent) || (sport || topic ? findProduct('conteudo') : null);
