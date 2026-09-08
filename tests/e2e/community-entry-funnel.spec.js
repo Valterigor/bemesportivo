@@ -21,7 +21,7 @@ test('visitante começa pelo Perfil Be com o registro preservado como destino', 
   await cta.click();
 
   await expect(page).toHaveURL(/\/meu-caminho-be\/registrar$/);
-  await expect(page.getByRole('heading', { name: 'Crie seu Perfil Be.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Crie um perfil com a sua identidade.' })).toBeVisible();
   await expect.poll(() => page.evaluate(() => sessionStorage.getItem('meuCaminhoBePendingRegistrationV1'))).toBe('registrar');
 });
 

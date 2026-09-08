@@ -276,9 +276,9 @@ test('menu móvel segue as seis etapas e o Perfil revela opções sob demanda', 
 
   await page.locator('#be-profile-edit').click();
   await expect(page.locator('.be-profile-optional-fields')).toBeVisible();
-  await expect(page.locator('#fb-profile-city')).toBeVisible();
-  await page.locator('.be-profile-optional-fields > summary').click();
   await expect(page.locator('#fb-profile-city')).toBeHidden();
+  await page.locator('.be-profile-optional-fields > summary').click();
+  await expect(page.locator('#fb-profile-city')).toBeVisible();
   await expect(page.locator('.be-profile-management')).toBeVisible();
   await expect(page.locator('.be-profile-management')).not.toHaveAttribute('open', '');
 });
