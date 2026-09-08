@@ -356,7 +356,7 @@ async function run() {
     assert.match(homeHtml, /id="home-hero-title">O que você busca no esporte\?<\/h1>/, 'O hero precisa partir da necessidade da pessoa.');
     assert.match(homeHtml, /id="be-ecosystem-search-form"[\s\S]*id="be-ecosystem-search-input"[\s\S]*id="be-ecosystem-search-results"/, 'A Busca Be precisa ter formulário, entrada e devolutiva acessível.');
     assert.match(homeHtml, /class="shell be-ecosystem-products"[\s\S]*Conhecimento[\s\S]*BEplay[\s\S]*Reportagens[\s\S]*Game 3D[\s\S]*Profissionais[\s\S]*Ferramentas[\s\S]*Produtos[\s\S]*Meu Caminho Be/, 'A Home precisa apresentar os oito destinos e suas finalidades.');
-    assert.match(homeHtml, /class="shell be-search-discovery"[\s\S]*Para começar a explorar[\s\S]*Minha primeira corrida[\s\S]*Calculadora Pace[\s\S]*Thais Garcez, uma nova versão[\s\S]*Como funciona\?[\s\S]*Sem IA generativa/, 'A Home precisa apresentar uma seleção inicial real e explicar a origem dos resultados da Busca Be.');
+    assert.match(homeHtml, /class="shell be-search-discovery"[\s\S]*Para começar a explorar[\s\S]*Minha primeira corrida[\s\S]*Calculadora Pace[\s\S]*Thais Garcez, uma nova versão[\s\S]*Como a Busca Be funciona[\s\S]*Sem IA generativa/, 'A Home precisa apresentar uma seleção inicial real e explicar a origem dos resultados da Busca Be.');
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/game"[\s\S]*?<strong>Game 3D<\/strong><small>Divirta-se<\/small>/, 'Game 3D precisa abrir seu destino exato.');
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/meu-caminho-be\?tela=conteudos"[\s\S]*?<strong>Conhecimento<\/strong>/, 'Conhecimento precisa abrir seu painel sem redirecionamento de produção.');
     assert.match(homeHtml, /class="be-ecosystem-product" href="\/meu-caminho-be\?tela=ferramentas"[\s\S]*?<strong>Ferramentas<\/strong>/, 'Ferramentas precisa abrir seu painel sem redirecionamento de produção.');
@@ -427,7 +427,7 @@ async function run() {
       assert.ok(fs.existsSync(path.join(root, 'img', image)), `Imagem da reportagem ausente: ${image}`);
     }
     assert.doesNotMatch(pathHtml, /fb-photo-checkin|photo-checkin\.js|Analisar minha foto/);
-    for (const id of ['be-entry-photo', 'be-entry-note', 'be-entry-public-help', 'fb-profile-public-enabled', 'fb-profile-public-consent', 'fb-profile-age', 'fb-profile-profession', 'be-public-manager', 'be-public-new-post', 'be-public-compose-form', 'be-public-compose-text', 'be-public-compose-photo']) {
+    for (const id of ['be-entry-photo', 'be-entry-note', 'be-entry-public-help', 'fb-profile-public-enabled', 'fb-profile-public-consent', 'fb-profile-age-range', 'fb-profile-preference', 'fb-profile-other-activities', 'be-public-manager', 'be-public-new-post', 'be-public-compose-form', 'be-public-compose-text', 'be-public-compose-photo']) {
       assert.match(pathHtml, new RegExp(`id="${id}"`), `Fluxo de diário público/privado ausente: ${id}`);
     }
     assert.match(pathHtml, /name="visibility" value="private" checked[\s\S]*name="visibility" value="public"/, 'O diário precisa permanecer privado por padrão e oferecer compartilhamento público explícito.');
@@ -489,8 +489,8 @@ async function run() {
     assert.match(pathHtml, /data-fb-panel="ferramentas"[\s\S]*id="fb-tools-mount"/, 'Ferramentas precisa ficar dentro de um painel próprio do aplicativo.');
     assert.match(pathHtml, /aria-label="Próximos passos após usar uma ferramenta"[\s\S]*?data-fb-view="dicas">Dicas práticas<\/button>[\s\S]*?data-fb-view="especialistas">Ver profissionais<\/button>/, 'O primeiro próximo passo de Ferramentas precisa abrir somente Dicas práticas.');
     assert.match(pathHtml, /class="be-journey-switcher"[\s\S]*?data-fb-view="progresso"[\s\S]*?data-fb-view="evolucao"[\s\S]*?data-fb-view="explorar"/, 'Diário, Evolução e História precisam permanecer dentro da Jornada.');
-    assert.match(pathHtml, /id="be-profile-onboarding"[\s\S]*Seu momento[\s\S]*Primeiro registro/, 'O primeiro acesso precisa explicar os dois passos antes de coletar os dados essenciais.');
-    assert.match(pathHtml, /<h2 id="be-profile-onboarding-title">Prepare seu primeiro passo\.<\/h2>[\s\S]*completado depois/, 'O Meu Caminho precisa apresentar uma entrada direta e deixar o perfil completo para depois.');
+    assert.match(pathHtml, /id="be-profile-onboarding"[\s\S]*Seu acesso[\s\S]*Seu Perfil Be[\s\S]*Primeiro registro/, 'O primeiro acesso precisa explicar a criação do acesso, do perfil e do primeiro registro.');
+    assert.match(pathHtml, /<h2 id="be-profile-onboarding-title">Crie um perfil com a sua identidade\.<\/h2>[\s\S]*página final/, 'O Meu Caminho precisa explicar quais informações formam o Perfil Be final.');
     assert.doesNotMatch(pathHtml, /id="journey-name"/, 'O Mapa BeM não deve perguntar novamente o nome já salvo no Perfil Be.');
     assert.match(pathHtml, /data-step-indicator="1"[^>]*>[\s\S]*Perfil Be/, 'O Mapa BeM precisa reconhecer o Perfil Be como etapa concluída.');
     assert.equal((pathHtml.match(/class="fb-section-actions(?:\s[^"]*)?"/g) || []).length, 6, 'As seis áreas principais precisam oferecer próximos passos contextuais.');
@@ -520,10 +520,10 @@ async function run() {
     assert.match(pathHtml, /css\/meu-caminho-modern\.css\?v=20260906-1/);
     assert.match(pathHtml, /js\/meu-caminho-navigation\.js\?v=20260906-2/);
     assert.match(pathHtml, /js\/meu-caminho-account\.js\?v=20260823-2/);
-    assert.match(pathHtml, /js\/fala-bem-app\.js\?v=20260906-2/);
+    assert.match(pathHtml, /js\/fala-bem-app\.js\?v=20260907-1/);
     assert.match(pathHtml, /js\/coluna-valtinho\.js\?v=20260823-1/);
-    assert.match(pathHtml, /css\/meu-caminho-diary\.css\?v=20260906-1/);
-    assert.match(pathHtml, /css\/meu-caminho-navigation\.css\?v=20260906-1/);
+    assert.match(pathHtml, /css\/meu-caminho-diary\.css\?v=20260907-1/);
+    assert.match(pathHtml, /css\/meu-caminho-navigation\.css\?v=20260907-1/);
     assert.match(pathHtml, /css\/fala-bem-platform\.css\?v=20260906-1/);
     assert.match(pathHtml, /js\/site-common\.js\?v=20260830-2/);
     assert.match(pathHtml, /class="fb-app-brand" href="\/"/, 'O logo do cabeçalho precisa voltar para a home principal.');
@@ -566,7 +566,7 @@ async function run() {
       assert.match(pathHtml, new RegExp(`id="${id}"`), `Banner interno ausente: ${id}`);
     }
     assert.match(pathHtml, /class="be-profile-social-card"[\s\S]*class="be-profile-cover"[\s\S]*class="be-profile-social-identity"/, 'O Perfil precisa apresentar uma identidade social antes do cadastro.');
-    assert.match(pathHtml, /class="be-profile-form-section"[\s\S]*Como podemos chamar você\?[\s\S]*2 · SEU MOVIMENTO/, 'O acesso local e a escolha do primeiro movimento precisam estar organizados em blocos compreensíveis.');
+    assert.match(pathHtml, /class="be-profile-form-section"[\s\S]*Como podemos chamar você\?[\s\S]*2 · SEU MOMENTO[\s\S]*3 · SUA VIDA NO ESPORTE/, 'O acesso local, o momento e a vida esportiva precisam estar organizados em blocos compreensíveis.');
     assert.doesNotMatch(pathHtml, /be-auth-(?:login|signup|recovery|update)-(?:form|email|password)/, 'O Meu Caminho Be não deve oferecer autenticação por e-mail ou senha.');
     assert.doesNotMatch(pathHtml, /meu-caminho-auth\.(?:css|js)/, 'O módulo antigo de autenticação por e-mail não deve ser carregado.');
     assert.match(pathHtml, /REGISTRAR · MEU CAMINHO BE[\s\S]*id="be-entry-dialog-description"/, 'O registro precisa ter banner e explicação próprios.');
@@ -689,7 +689,7 @@ async function run() {
     assert.match(pathHtml, /trail-running[\s\S]*data-fb-tip="correr"[\s\S]*trail-football[\s\S]*data-fb-tip="futebol"[\s\S]*trail-performance[\s\S]*data-fb-tip="evoluir"[\s\S]*trail-health[\s\S]*data-fb-tip="saude"/);
     assert.doesNotMatch(pathHtml, /trail-card[\s\S]{0,500}data-platform-target=/, 'Cada trilha precisa abrir seu próprio guia, não uma seção genérica.');
     assert.match(appScript, /function renderProfilePresentation\(\)/);
-    assert.match(appScript, /profileEditMode = false;[\s\S]*saveProfile\(\{[\s\S]*name, location, photoDataUrl, sportProfile, story, publicAge, profession, publicEnabled/);
+    assert.match(appScript, /profileEditMode = false;[\s\S]*saveProfile\(\{[\s\S]*name, location, photoDataUrl, sportProfile, story, profileMoment, profileGoals, otherActivities, ageRange, practicePreference, publicEnabled/);
     assert.match(appScript, /source: 'journey_form'/);
     assert.match(appScript, /source: 'be_now'/);
     assert.match(appScript, /function renderBeNow\(/);

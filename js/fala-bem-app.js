@@ -18,7 +18,7 @@ const ACCESS_STORAGE_KEY = 'meuCaminhoBeAccessV1';
 const BE_NOW_TIMER_KEY = 'meuCaminhoBeTimerV1';
 const SAFETY_CONSENT_VERSION = '2026-07-21';
 const PUBLIC_PROFILE_TERMS_VERSION = '2026-08-15';
-const PROFILE_SCHEMA_VERSION = 10;
+const PROFILE_SCHEMA_VERSION = 11;
 const BACKUP_KIND = 'meu-caminho-be-backup';
 const BACKUP_VERSION = 1;
 const BACKUP_MAX_BYTES = 5 * 1024 * 1024;
@@ -57,6 +57,17 @@ const sportVisualLabels = {
   discreto: 'Discreto',
   vibrante: 'Vibrante'
 };
+const profileMomentLabels = {
+  comecando: 'Estou começando', voltando: 'Estou voltando', constancia: 'Quero criar constância',
+  evoluindo: 'Já pratico e quero evoluir', registrando: 'Quero registrar minha história'
+};
+const profileGoalLabels = {
+  movimento: 'Movimentar-me mais', saude: 'Cuidar da saúde', diversao: 'Divertir-me',
+  pessoas: 'Conhecer pessoas', retorno: 'Voltar a praticar', performance: 'Melhorar meu desempenho',
+  memorias: 'Guardar minhas experiências'
+};
+const profileAgeRanges = new Set(['18-24', '25-34', '35-44', '45-59', '60+']);
+const profilePracticePreferences = new Set(['individual', 'grupo', 'ambos']);
 const sportIdentityPresets = {
   futebol: { label: 'Futebol', metric: 'Gols', role: 'Atacante, meia, defensor ou goleiro' },
   futsal: { label: 'Futsal', metric: 'Gols', role: 'Fixo, ala, pivô ou goleiro' },
@@ -367,6 +378,11 @@ function readStoredProfile() {
       email: String(profile.email || '').trim().toLocaleLowerCase('pt-BR').slice(0, 120),
       publicAge: Number.isFinite(Number(profile.publicAge)) && Number(profile.publicAge) >= 18 && Number(profile.publicAge) <= 120 ? Math.round(Number(profile.publicAge)) : null,
       profession: String(profile.profession || '').trim().slice(0, 60),
+      profileMoment: profileMomentLabels[profile.profileMoment] ? profile.profileMoment : '',
+      profileGoals: sanitizeProfileList(profile.profileGoals, Object.keys(profileGoalLabels), 7),
+      otherActivities: sanitizeProfileList(profile.otherActivities, null, 8),
+      ageRange: profileAgeRanges.has(profile.ageRange) ? profile.ageRange : '',
+      practicePreference: profilePracticePreferences.has(profile.practicePreference) ? profile.practicePreference : '',
       publicEnabled: profile.publicEnabled === true,
       publicTermsAccepted: profile.publicTermsAccepted === true && profile.publicTermsVersion === PUBLIC_PROFILE_TERMS_VERSION,
       publicTermsVersion: String(profile.publicTermsVersion || ''),
@@ -399,6 +415,11 @@ function sanitizeProfilePhoto(value) {
 
 function sanitizeProfileStory(value) {
   return String(value || '').replace(/\r\n/g, '\n').trim().slice(0, 600);
+}
+
+function sanitizeProfileList(value, allowedValues = null, limit = 8) {
+  const values = Array.isArray(value) ? value : String(value || '').split(',');
+  return [...new Set(values.map(item => String(item).trim().slice(0, 40)).filter(item => item && (!allowedValues || allowedValues.includes(item))))].slice(0, limit);
 }
 
 function saveProfile(updates) {
@@ -1839,7 +1860,7 @@ function renderProfilePresentation() {
   document.getElementById('be-profile-stat-since').textContent = profileTimeLabel(currentProfile?.createdAt);
   const tags = document.getElementById('be-profile-display-tags');
   if (tags) {
-    const values = [sportProfile.modalityLabel, sportProfile.roleLabel, location].filter(Boolean);
+    const values = [profileMomentLabels[currentProfile?.profileMoment], sportProfile.modalityLabel, sportProfile.roleLabel, location, ...sanitizeProfileList(currentProfile?.otherActivities)].filter(Boolean);
     tags.replaceChildren(...values.map(value => {
       const tag = document.createElement('span');
       tag.textContent = value;
@@ -1897,8 +1918,9 @@ function syncProfileFormValues() {
   const nameInput = document.getElementById('fb-profile-name');
   const cityInput = document.getElementById('fb-profile-city');
   const stateInput = document.getElementById('fb-profile-state');
-  const ageInput = document.getElementById('fb-profile-age');
-  const professionInput = document.getElementById('fb-profile-profession');
+  const ageRangeInput = document.getElementById('fb-profile-age-range');
+  const preferenceInput = document.getElementById('fb-profile-preference');
+  const otherActivitiesInput = document.getElementById('fb-profile-other-activities');
   const publicInput = document.getElementById('fb-profile-public-enabled');
   const publicConsentInput = document.getElementById('fb-profile-public-consent');
   const sportInput = document.getElementById('fb-profile-sport');
@@ -1910,8 +1932,12 @@ function syncProfileFormValues() {
   if (nameInput && document.activeElement !== nameInput) nameInput.value = currentProfile?.name || '';
   if (cityInput && document.activeElement !== cityInput) cityInput.value = currentProfile?.location?.city || '';
   if (stateInput && document.activeElement !== stateInput) stateInput.value = currentProfile?.location?.state || '';
-  if (ageInput && document.activeElement !== ageInput) ageInput.value = currentProfile?.publicAge || '';
-  if (professionInput && document.activeElement !== professionInput) professionInput.value = currentProfile?.profession || '';
+  if (ageRangeInput && document.activeElement !== ageRangeInput) ageRangeInput.value = currentProfile?.ageRange || '';
+  if (preferenceInput && document.activeElement !== preferenceInput) preferenceInput.value = currentProfile?.practicePreference || '';
+  if (otherActivitiesInput && document.activeElement !== otherActivitiesInput) otherActivitiesInput.value = sanitizeProfileList(currentProfile?.otherActivities).join(', ');
+  document.querySelectorAll('input[name="profileMoment"]').forEach(input => { input.checked = input.value === currentProfile?.profileMoment; });
+  const savedGoals = new Set(sanitizeProfileList(currentProfile?.profileGoals, Object.keys(profileGoalLabels), 7));
+  document.querySelectorAll('input[name="profileGoals"]').forEach(input => { input.checked = savedGoals.has(input.value); });
   if (publicInput && document.activeElement !== publicInput) publicInput.checked = currentProfile?.publicEnabled === true;
   if (publicConsentInput && document.activeElement !== publicConsentInput) publicConsentInput.checked = currentProfile?.publicTermsAccepted === true && currentProfile?.publicTermsVersion === PUBLIC_PROFILE_TERMS_VERSION;
   const publicConsentWrap = document.getElementById('fb-profile-public-consent-wrap');
@@ -1921,7 +1947,21 @@ function syncProfileFormValues() {
   if (visualInput && document.activeElement !== visualInput) visualInput.value = sportProfile.visual;
   if (storyInput && document.activeElement !== storyInput) storyInput.value = sanitizeProfileStory(currentProfile?.story);
   if (storyCount) storyCount.textContent = String(storyInput?.value.length || 0);
+  renderLiveProfilePreview();
   renderProfilePhoto();
+}
+
+function renderLiveProfilePreview() {
+  const name = document.getElementById('fb-profile-name')?.value.trim() || currentProfile?.name || 'Seu nome';
+  const sportInput = document.getElementById('fb-profile-sport');
+  const sport = sportInput?.selectedOptions?.[0]?.textContent || getSportProfile().modalityLabel;
+  const moment = document.querySelector('input[name="profileMoment"]:checked')?.value || currentProfile?.profileMoment || '';
+  const nameNode = document.getElementById('be-profile-preview-name');
+  const sportNode = document.getElementById('be-profile-preview-sport');
+  const momentNode = document.getElementById('be-profile-preview-moment');
+  if (nameNode) nameNode.textContent = name;
+  if (sportNode) sportNode.textContent = sport;
+  if (momentNode) momentNode.textContent = profileMomentLabels[moment] || 'Escolha uma frase que combine com seu momento.';
 }
 
 function renderProfilePhoto(photo = pendingProfilePhoto === undefined ? currentProfile?.photoDataUrl : pendingProfilePhoto) {
@@ -3994,9 +4034,14 @@ document.getElementById('fb-profile-form')?.addEventListener('submit', event => 
     city: document.getElementById('fb-profile-city')?.value.trim().slice(0, 60) || '',
     state: document.getElementById('fb-profile-state')?.value.trim().toLocaleUpperCase('pt-BR').slice(0, 2) || ''
   };
-  const publicAgeValue = Number(document.getElementById('fb-profile-age')?.value || 0);
-  const publicAge = Number.isFinite(publicAgeValue) && publicAgeValue >= 18 && publicAgeValue <= 120 ? Math.round(publicAgeValue) : null;
-  const profession = document.getElementById('fb-profile-profession')?.value.trim().slice(0, 60) || '';
+  const profileMomentValue = document.querySelector('input[name="profileMoment"]:checked')?.value || '';
+  const profileMoment = profileMomentLabels[profileMomentValue] ? profileMomentValue : '';
+  const profileGoals = sanitizeProfileList([...document.querySelectorAll('input[name="profileGoals"]:checked')].map(input => input.value), Object.keys(profileGoalLabels), 7);
+  const otherActivities = sanitizeProfileList(document.getElementById('fb-profile-other-activities')?.value, null, 8);
+  const ageRangeValue = document.getElementById('fb-profile-age-range')?.value || '';
+  const ageRange = profileAgeRanges.has(ageRangeValue) ? ageRangeValue : '';
+  const preferenceValue = document.getElementById('fb-profile-preference')?.value || '';
+  const practicePreference = profilePracticePreferences.has(preferenceValue) ? preferenceValue : '';
   const publicEnabled = document.getElementById('fb-profile-public-enabled')?.checked === true;
   const publicTermsAccepted = document.getElementById('fb-profile-public-consent')?.checked === true;
   if (publicEnabled && !publicTermsAccepted) {
@@ -4015,7 +4060,7 @@ document.getElementById('fb-profile-form')?.addEventListener('submit', event => 
     : sanitizeProfilePhoto(pendingProfilePhoto);
   profileEditMode = false;
   saveProfile({
-    name, location, photoDataUrl, sportProfile, story, publicAge, profession, publicEnabled,
+    name, location, photoDataUrl, sportProfile, story, profileMoment, profileGoals, otherActivities, ageRange, practicePreference, publicEnabled,
     publicTermsAccepted: publicEnabled ? publicTermsAccepted : currentProfile?.publicTermsAccepted === true,
     publicTermsVersion: publicEnabled ? PUBLIC_PROFILE_TERMS_VERSION : currentProfile?.publicTermsVersion || '',
     publicTermsAcceptedAt: publicEnabled && publicTermsAccepted
@@ -4059,6 +4104,9 @@ document.getElementById('fb-profile-form')?.addEventListener('submit', event => 
     document.getElementById('be-profile-display-name')?.focus({ preventScroll: true });
   }, 180);
 });
+
+document.getElementById('fb-profile-form')?.addEventListener('input', renderLiveProfilePreview);
+document.getElementById('fb-profile-form')?.addEventListener('change', renderLiveProfilePreview);
 
 document.getElementById('fb-profile-photo')?.addEventListener('change', async event => {
   const input = event.currentTarget;
@@ -4557,6 +4605,11 @@ document.getElementById('fb-import-profile')?.addEventListener('change', async e
       email: String(profile.email || '').trim().toLocaleLowerCase('pt-BR').slice(0, 120),
       publicAge: Number.isFinite(Number(profile.publicAge)) && Number(profile.publicAge) >= 18 && Number(profile.publicAge) <= 120 ? Math.round(Number(profile.publicAge)) : null,
       profession: String(profile.profession || '').trim().slice(0, 60),
+      profileMoment: profileMomentLabels[profile.profileMoment] ? profile.profileMoment : '',
+      profileGoals: sanitizeProfileList(profile.profileGoals, Object.keys(profileGoalLabels), 7),
+      otherActivities: sanitizeProfileList(profile.otherActivities, null, 8),
+      ageRange: profileAgeRanges.has(profile.ageRange) ? profile.ageRange : '',
+      practicePreference: profilePracticePreferences.has(profile.practicePreference) ? profile.practicePreference : '',
       publicEnabled: profile.publicEnabled === true,
       publicTermsAccepted: profile.publicTermsAccepted === true && profile.publicTermsVersion === PUBLIC_PROFILE_TERMS_VERSION,
       publicTermsVersion: String(profile.publicTermsVersion || ''),

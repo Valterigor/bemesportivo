@@ -241,3 +241,26 @@ A primeira etapa do redesign foi aplicada ao produto real:
 - a prioridade da Busca Be foi corrigida para que intenções explícitas, como registrar uma atividade, prevaleçam sobre temas apenas correlacionados.
 
 Na medição local, a primeira entrada do Meu Caminho Be caiu de aproximadamente 4.431 para 2.726 px de altura em uma tela de 390 px. A Home caiu de aproximadamente 10.038 para 8.065 px na mesma largura. A próxima etapa deve reorganizar as seções editoriais da Home para atingir a estrutura de seis momentos proposta nesta auditoria.
+
+## Segunda implementação — experiência visual
+
+Os pontos de maior atrito observados na primeira validação foram corrigidos no produto:
+
+- a explicação da Busca Be passou a ser um conteúdo expansível, deixando a seleção de resultados em primeiro plano;
+- a seção de ferramentas virou uma faixa horizontal compacta no celular, mantendo as três opções acessíveis;
+- o BEplay apresenta inicialmente um vídeo de destaque no celular e mantém o acesso à coleção completa;
+- a chamada repetida depois do bloco de vídeos deixou de ocupar espaço no fluxo móvel;
+- os intervalos entre as principais seções foram reduzidos e padronizados;
+- links do rodapé da Home receberam áreas de toque maiores e uma organização em duas colunas;
+- o rodapé do primeiro acesso ao Meu Caminho remove destinos redundantes e destaca somente os links institucionais necessários;
+- as folhas de estilo alteradas receberam nova versão para evitar que o navegador mantenha a aparência anterior em cache.
+
+Na nova medição em 390 px, a Home passou de 8.065 para 6.700 px, uma redução adicional de aproximadamente 17%. A primeira entrada do Meu Caminho passou de 2.726 para 2.293 px. O fluxo não apresentou corte lateral; a rolagem horizontal permanece somente nas faixas de conteúdo em que ela é indicada e intencional.
+
+## Terceira implementação — perfil com identidade
+
+A simplificação inicial foi recalibrada para que o primeiro acesso também consiga formar um Perfil Be útil. A entrada agora explica três momentos — acesso, Perfil Be e primeiro registro — e permite informar foto, momento no esporte, modalidade, função, outras atividades, objetivos e uma apresentação pessoal. Cidade, estado, faixa etária e preferência por prática individual ou em grupo ficam em uma área de personalização opcional. A idade exata e a profissão foram retiradas por não ajudarem diretamente a experiência esportiva. Somente o nome continua obrigatório e todas as escolhas permanecem editáveis.
+
+Com a recuperação desses campos, a primeira entrada mede aproximadamente 3.920 px em 390 px. Ela continua menor que a versão original de 4.431 px, mas entrega os dados necessários para construir a página final do usuário. O ganho de experiência passa a vir da hierarquia, da explicação de uso e da distinção entre informação obrigatória e opcional, em vez da simples remoção de campos.
+
+O formulário também passou a mostrar uma prévia em tempo real com nome, modalidade e momento atual. As escolhas são apresentadas como cards e botões de seleção, usando linguagem acolhedora e evitando classificações como “sedentário” ou “nível baixo”.

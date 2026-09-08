@@ -32,8 +32,8 @@
 <link rel="stylesheet" href="/css/routine-calendar.css?v=20260906-1">
 <link rel="stylesheet" href="/css/ui-polish.css?v=20260906-1">
 <link rel="stylesheet" href="/css/meu-caminho-modern.css?v=20260906-1">
-<link rel="stylesheet" href="/css/meu-caminho-diary.css?v=20260906-1">
-<link rel="stylesheet" href="/css/meu-caminho-navigation.css?v=20260906-1">
+<link rel="stylesheet" href="/css/meu-caminho-diary.css?v=20260907-1">
+<link rel="stylesheet" href="/css/meu-caminho-navigation.css?v=20260907-1">
 <link rel="stylesheet" href="/css/meu-caminho-profile.css?v=20260906-1">
 <link rel="stylesheet" href="/css/share-card.css?v=20260906-1">
 <link rel="stylesheet" href="/css/mobile-typography.css?v=20260906-1">
@@ -712,10 +712,10 @@
 
 <div class="fb-app-panel fb-profile-panel" data-fb-panel="perfil" hidden>
 <section class="be-onboarding-sequence" id="be-profile-onboarding" aria-labelledby="be-profile-onboarding-title" hidden>
-<ol aria-label="Etapas para criar seu caminho"><li class="current"><span>1</span><strong>Seu momento</strong></li><li><span>2</span><strong>Primeiro registro</strong></li></ol>
-<span>ETAPA 1 DE 2</span>
-<h2 id="be-profile-onboarding-title">Prepare seu primeiro passo.</h2>
-<p>Diga como podemos chamar você e escolha uma atividade. O restante do perfil pode ser completado depois.</p>
+<ol aria-label="Etapas para criar seu caminho"><li class="current"><span>1</span><strong>Seu acesso</strong></li><li><span>2</span><strong>Seu Perfil Be</strong></li><li><span>3</span><strong>Primeiro registro</strong></li></ol>
+<span>ETAPAS 1 E 2 DE 3</span>
+<h2 id="be-profile-onboarding-title">Crie um perfil com a sua identidade.</h2>
+<p>Comece pelo nome e pela modalidade. Foto, localização, função e história ajudam a formar sua página final, mas você decide o que deseja informar.</p>
 </section>
 <section class="fb-profile-next-step" id="fb-profile-next-step" aria-labelledby="fb-profile-next-title" hidden>
 <span>SEU PRÓXIMO PASSO</span>
@@ -748,10 +748,10 @@
 </section>
 <form id="fb-profile-form" class="fb-profile-form">
 <section class="be-profile-social-card" aria-labelledby="fb-profile-title">
-<div class="be-profile-cover"><span>MEU CAMINHO BE</span><strong>Comece pelo que faz sentido agora</strong></div>
+<div class="be-profile-cover"><span>PRÉVIA DO SEU PERFIL BE</span><strong>Sua história começa a ganhar forma</strong></div>
 <div class="be-profile-social-identity">
 <div class="be-profile-photo-preview"><img id="fb-profile-photo-preview" alt="Sua foto de perfil" hidden><span id="fb-profile-photo-fallback" aria-hidden="true">BE</span></div>
-<div class="be-profile-social-copy"><span>SEU CAMINHO COMEÇA AQUI</span><h2 id="fb-profile-title">Um primeiro passo simples.</h2><p>Escolha o que combina com seu momento. Seus dados ficam privados neste aparelho e você pode completar o perfil depois.</p><div class="be-profile-photo-actions"><label for="fb-profile-photo">Escolher foto<input type="file" id="fb-profile-photo" name="photo" accept="image/jpeg,image/png,image/webp" hidden></label><button type="button" id="fb-profile-photo-remove" hidden>Remover</button></div></div>
+<div class="be-profile-social-copy"><span>SUA IDENTIDADE NO ESPORTE</span><h2 id="fb-profile-title">Monte o seu Perfil Be.</h2><p>A foto é opcional. Ela aparecerá na página do seu perfil e poderá ser trocada ou removida quando você quiser.</p><div class="be-profile-live-preview" aria-live="polite"><small>ASSIM SEU PERFIL ESTÁ FICANDO</small><strong id="be-profile-preview-name">Seu nome</strong><span id="be-profile-preview-sport">Esporte ou atividade</span><p id="be-profile-preview-moment">Escolha uma frase que combine com seu momento.</p></div><div class="be-profile-photo-actions"><label for="fb-profile-photo">Adicionar foto<input type="file" id="fb-profile-photo" name="photo" accept="image/jpeg,image/png,image/webp" hidden></label><button type="button" id="fb-profile-photo-remove" hidden>Remover</button></div></div>
 </div>
 </section>
 <section class="be-profile-form-section" aria-labelledby="be-profile-registration-title">
@@ -759,18 +759,19 @@
 <div class="be-profile-form-grid be-profile-essential-fields">
 <label for="fb-profile-name">Nome de acesso <em>(nome ou apelido)</em><input id="fb-profile-name" name="name" maxlength="40" placeholder="Como podemos chamar você?" autocomplete="name" required><small>Usado somente para reconhecer seu perfil neste aparelho.</small></label>
 </div>
-<details class="be-profile-optional-fields">
-<summary>Adicionar informações opcionais</summary>
-<div class="be-profile-form-grid">
-<label for="fb-profile-age">Idade <em>(opcional e salva somente neste aparelho)</em><input id="fb-profile-age" name="age" type="number" min="18" max="120" inputmode="numeric" placeholder="Ex.: 34"></label>
-<label for="fb-profile-profession">Profissão <em>(opcional no diário privado)</em><input id="fb-profile-profession" name="profession" maxlength="60" placeholder="Ex.: professora, estudante, autônomo" autocomplete="organization-title"></label>
-<label for="fb-profile-city">Cidade <em>(opcional)</em><input id="fb-profile-city" name="city" maxlength="60" placeholder="Sua cidade" autocomplete="address-level2"></label>
-<label for="fb-profile-state">Estado <em>(opcional)</em><input id="fb-profile-state" name="state" maxlength="2" pattern="[A-Za-z]{2}" placeholder="UF" autocomplete="address-level1"></label>
-</div>
-</details>
+</section>
+<section class="be-profile-form-section be-profile-moment-section" aria-labelledby="be-profile-moment-title">
+<header><span>2 · SEU MOMENTO</span><h3 id="be-profile-moment-title">Qual frase combina com você agora?</h3><p>Não é uma definição permanente. Escolha apenas o que representa este momento.</p></header>
+<fieldset class="be-profile-choice-grid"><legend class="sr-only">Seu momento atual no esporte</legend>
+<label><input type="radio" name="profileMoment" value="comecando"><span><strong>Estou começando</strong><small>Quero descobrir uma forma possível de me movimentar.</small></span></label>
+<label><input type="radio" name="profileMoment" value="voltando"><span><strong>Estou voltando</strong><small>Quero reencontrar o esporte no meu ritmo.</small></span></label>
+<label><input type="radio" name="profileMoment" value="constancia"><span><strong>Quero criar constância</strong><small>Busco uma rotina que eu consiga manter.</small></span></label>
+<label><input type="radio" name="profileMoment" value="evoluindo"><span><strong>Já pratico e quero evoluir</strong><small>Quero acompanhar minha experiência e meus avanços.</small></span></label>
+<label><input type="radio" name="profileMoment" value="registrando"><span><strong>Quero registrar minha história</strong><small>Desejo guardar os momentos que vivo no esporte.</small></span></label>
+</fieldset>
 </section>
 <section class="be-profile-form-section" aria-labelledby="be-profile-sport-title">
-<header><span>2 · SEU MOVIMENTO</span><h3 id="be-profile-sport-title">O que você quer viver agora?</h3><p>Escolha uma atividade para personalizar seu primeiro registro. Se ainda não souber, continue com “Esporte ou atividade”.</p></header>
+<header><span>3 · SUA VIDA NO ESPORTE</span><h3 id="be-profile-sport-title">O que faz parte da sua história?</h3><p>Escolha uma modalidade e acrescente somente o que fizer sentido para você.</p></header>
 <div class="be-profile-form-grid">
 <label for="fb-profile-sport">Modalidade principal<select id="fb-profile-sport" name="sport">
 <option value="outro">Esporte ou atividade</option>
@@ -783,7 +784,8 @@
 <option value="lutas">Lutas</option>
 <option value="musculacao">Musculação</option>
 </select></label>
-<label for="fb-profile-role">Função ou posição<input id="fb-profile-role" name="role" maxlength="40" placeholder="Ex.: atacante, ponteiro, corredor" autocomplete="organization-title"></label>
+<label for="fb-profile-role">Função ou posição <em>(opcional)</em><input id="fb-profile-role" name="role" maxlength="40" placeholder="Ex.: atacante, ponteiro ou corredor"></label>
+<label for="fb-profile-other-activities">Outras atividades de que gosta <em>(opcional)</em><input id="fb-profile-other-activities" name="otherActivities" maxlength="100" placeholder="Ex.: caminhada, dança e vôlei"><small>Separe as atividades por vírgulas.</small></label>
 <label class="be-profile-visual-field" for="fb-profile-visual">Identidade visual<select id="fb-profile-visual" name="visual">
 <option value="energia">Energia</option>
 <option value="equilibrio">Equilíbrio</option>
@@ -793,10 +795,31 @@
 <div class="fb-profile-summary" id="fb-profile-summary"></div>
 </div>
 </section>
+<section class="be-profile-form-section be-profile-goals-section" aria-labelledby="be-profile-goals-title">
+<header><span>4 · O QUE VOCÊ QUER VIVER</span><h3 id="be-profile-goals-title">O que gostaria de encontrar no esporte?</h3><p>Escolha quantas opções quiser. Você poderá mudar essas escolhas depois.</p></header>
+<fieldset class="be-profile-chip-grid"><legend class="sr-only">Objetivos pessoais no esporte</legend>
+<label><input type="checkbox" name="profileGoals" value="movimento"><span>Movimentar-me mais</span></label>
+<label><input type="checkbox" name="profileGoals" value="saude"><span>Cuidar da saúde</span></label>
+<label><input type="checkbox" name="profileGoals" value="diversao"><span>Divertir-me</span></label>
+<label><input type="checkbox" name="profileGoals" value="pessoas"><span>Conhecer pessoas</span></label>
+<label><input type="checkbox" name="profileGoals" value="retorno"><span>Voltar a praticar</span></label>
+<label><input type="checkbox" name="profileGoals" value="performance"><span>Melhorar meu desempenho</span></label>
+<label><input type="checkbox" name="profileGoals" value="memorias"><span>Guardar minhas experiências</span></label>
+</fieldset>
+</section>
 <section class="be-profile-form-section be-profile-story-section" aria-labelledby="be-profile-story-title">
-<header><span>MINHA HISTÓRIA</span><h3 id="be-profile-story-title">O que o esporte representa para você?</h3><p>Se quiser, conte sobre seus começos, pausas, pessoas, lembranças ou objetivos. O texto fica privado enquanto o Meu Diário BE estiver desativado.</p></header>
+<header><span>5 · SUA APRESENTAÇÃO</span><h3 id="be-profile-story-title">O que o esporte representa para você?</h3><p>Se quiser, conte sobre um começo, um recomeço, uma lembrança ou algo que deseja viver. Ela continua privada enquanto o Meu Diário BE estiver desativado.</p></header>
 <label for="fb-profile-story">Minha história no esporte <em>(opcional)</em><textarea id="fb-profile-story" name="story" maxlength="600" rows="6" placeholder="Ex.: Comecei a jogar com amigos na escola. Hoje quero voltar a me movimentar e criar mais momentos de lazer na semana."></textarea><small><span id="fb-profile-story-count">0</span>/600 caracteres</small></label>
 </section>
+<details class="be-profile-optional-fields">
+<summary><span>Quero personalizar mais<small>Todos os campos são opcionais</small></span></summary>
+<div class="be-profile-form-grid">
+<label for="fb-profile-city">Cidade<input id="fb-profile-city" name="city" maxlength="60" placeholder="Sua cidade" autocomplete="address-level2"></label>
+<label for="fb-profile-state">Estado<input id="fb-profile-state" name="state" maxlength="2" pattern="[A-Za-z]{2}" placeholder="UF" autocomplete="address-level1"></label>
+<label for="fb-profile-age-range">Faixa etária<select id="fb-profile-age-range" name="ageRange"><option value="">Prefiro não informar</option><option value="18-24">18 a 24 anos</option><option value="25-34">25 a 34 anos</option><option value="35-44">35 a 44 anos</option><option value="45-59">45 a 59 anos</option><option value="60+">60 anos ou mais</option></select></label>
+<label for="fb-profile-preference">Como prefere praticar?<select id="fb-profile-preference" name="practicePreference"><option value="">Ainda estou descobrindo</option><option value="individual">Atividades individuais</option><option value="grupo">Atividades em grupo</option><option value="ambos">Gosto das duas formas</option></select></label>
+</div>
+</details>
 <section class="be-profile-form-section be-public-profile-settings" aria-labelledby="be-public-profile-settings-title" hidden>
 <header><span>MEU DIÁRIO BE</span><h3 id="be-public-profile-settings-title">Quer ter um diário público?</h3><p>Ative esta opção para criar uma página com seu Perfil Be básico e somente os textos e fotos que você decidir compartilhar. Seus dados de cadastro e registros de atividade continuam privados.</p></header>
 <label class="be-public-profile-toggle"><input type="checkbox" id="fb-profile-public-enabled" name="publicEnabled"><span><strong>Quero ativar o Meu Diário BE</strong><small>As pessoas verão apenas seu nome de exibição, foto, esporte, apresentação e as publicações que você escolher compartilhar.</small></span></label>
@@ -804,7 +827,7 @@
 <div class="be-public-profile-status" id="be-public-profile-status" role="status"><span aria-hidden="true">◌</span><p>Ative, aceite os termos e salve. Sua página entrará no ar.</p></div>
 <a class="be-public-profile-link" id="be-public-profile-link" href="/perfil-publico" target="_blank" rel="noopener noreferrer" hidden>Visualizar Meu Diário BE</a>
 </section>
-<footer class="be-profile-form-footer"><p class="be-profile-privacy">🔒 Seus dados ficam neste aparelho por padrão. Somente uma cópia criptografada é enviada quando você ativa a continuidade por código.</p><div><button type="button" id="be-profile-cancel-edit" hidden>Cancelar</button><button type="submit" class="fb-primary-action" id="fb-profile-save">Salvar perfil e entrar</button></div></footer>
+<footer class="be-profile-form-footer"><p class="be-profile-privacy">🔒 Seus dados ficam neste aparelho por padrão. Você poderá revisar o perfil antes de tornar qualquer conteúdo público.</p><div><button type="button" id="be-profile-cancel-edit" hidden>Cancelar</button><button type="submit" class="fb-primary-action" id="fb-profile-save">Criar meu Perfil Be</button></div></footer>
 </form>
 <p class="fb-profile-feedback" id="fb-profile-feedback" aria-live="polite"></p>
 <nav class="fb-section-actions" aria-label="Próximos passos após o perfil">
@@ -1572,7 +1595,7 @@ Seu navegador não consegue reproduzir este vídeo.
 <script src="/js/coluna-valtinho.js?v=20260823-1" defer></script>
 <script src="/js/be-knowledge-library.js?v=20260821-4" defer></script>
 <script src="/js/meu-caminho-navigation.js?v=20260906-2" defer></script>
-<script src="/js/fala-bem-app.js?v=20260906-2" defer></script>
+<script src="/js/fala-bem-app.js?v=20260907-1" defer></script>
 <script src="/js/be-ia.js?v=20260806-1" defer></script>
 <script src="/js/meu-caminho-diary.js?v=20260906-2" defer></script>
 <script src="/js/meu-caminho-public.js?v=20260902-2" defer></script>

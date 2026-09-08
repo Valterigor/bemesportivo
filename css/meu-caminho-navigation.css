@@ -325,10 +325,6 @@ body.fala-bem-app-page .fb-mobile-drawer [data-fb-view][data-fb-gated="true"] {
   gap: 12px;
 }
 
-body.fala-bem-app-page .fb-app-shell.fb-identity-pending .be-profile-optional-fields {
-  display: none !important;
-}
-
 @media (max-width: 600px) {
   .be-profile-management > summary {
     display: grid;

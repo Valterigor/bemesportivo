@@ -13,7 +13,7 @@ const serviceWorker = read('sw.js');
 
 assert.match(html, /meta name="be-meu-caminho-mode" content="local-only"/);
 assert.match(html, /meta name="be-continuity-mode" content="encrypted-code"/);
-assert.match(html, /1 · SEU ACESSO[\s\S]*Nome de acesso[\s\S]*Salvar perfil e entrar/);
+assert.match(html, /1 · SEU ACESSO[\s\S]*Nome de acesso[\s\S]*Criar meu Perfil Be/);
 assert.match(html, /Use seu nome ou apelido\. Não é preciso informar e-mail nem criar senha/);
 assert.doesNotMatch(html, /id="be-auth-(?:gateway|login-form|signup-form|recovery-form|update-form|open)"/);
 assert.doesNotMatch(html, /be-auth-(?:login|signup|recovery)-(?:email|password)/);
